@@ -1,0 +1,4361 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -512.0031249999989,
+    "scrollLeft": 0,
+    "zoomLevel": 0.4,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "DaneSystem",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "Users",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "7d80ec14-f69c-4799-a121-317a68bc439a"
+          },
+          {
+            "name": "Username",
+            "comment": "",
+            "dataType": "nvarchar",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 65.24493408203125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "27be540f-1228-4f87-a829-0759bbe5ed45"
+          },
+          {
+            "name": "Password",
+            "comment": "",
+            "dataType": "nvarchar",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60.79893493652344,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "e3f1f13e-a16a-4741-bec5-928bd57279ab"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1283.7553,
+          "top": 1596.8006,
+          "zIndex": 388,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "ca1d7387-40c1-4833-95c2-547d68af9ed5"
+      },
+      {
+        "name": "PassiveTalentEffects",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "5252c312-e8cf-421d-b9b8-cab882b48655"
+          },
+          {
+            "name": "Description",
+            "comment": "",
+            "dataType": "NVARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.95289611816406,
+              "widthComment": 60,
+              "widthDataType": 69.79493713378906,
+              "widthDefault": 60
+            },
+            "id": "69ce8234-e680-4ea1-9c20-2d793df9fd47"
+          },
+          {
+            "name": "ThingModified",
+            "comment": "",
+            "dataType": "NVARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 90.80291748046875,
+              "widthComment": 60,
+              "widthDataType": 69.79493713378906,
+              "widthDefault": 60
+            },
+            "id": "82d2c922-0050-4da9-90e2-82f7ed66f91c"
+          },
+          {
+            "name": "Modifier",
+            "comment": "",
+            "dataType": "NVARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 69.79493713378906,
+              "widthDefault": 60
+            },
+            "id": "63311f78-1e94-4681-826c-1a7e5bad6619"
+          },
+          {
+            "name": "CastingStat",
+            "comment": "",
+            "dataType": "NVARCHAR(4)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.6279296875,
+              "widthComment": 60,
+              "widthDataType": 85.03091430664062,
+              "widthDefault": 60
+            },
+            "id": "ac5339be-a6ed-48d9-93ad-b367290194cc"
+          },
+          {
+            "name": "MagicTypeId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 79.99993896484375,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "d9cae8f8-afcd-4c93-bf92-4f67fd6fdc45"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 24.2048,
+          "top": 55.0749,
+          "zIndex": 1,
+          "widthName": 124.45985412597656,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "d18f020d-127a-4726-9797-a85dc36d52fe"
+      },
+      {
+        "name": "MagicTypes",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "7795c873-5588-4bdf-8689-f51c14e1fb2e"
+          },
+          {
+            "name": "Name",
+            "comment": "",
+            "dataType": "NVARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 69.79493713378906,
+              "widthDefault": 60
+            },
+            "id": "f563adeb-d242-475d-8f19-0bfc15aa0222"
+          },
+          {
+            "name": "TargetStat",
+            "comment": "",
+            "dataType": "NVARCHAR(10)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 64.55593872070312,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "8acd0892-960f-4a4d-ba95-00b715b100d6"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 555.4652,
+          "top": 85.214,
+          "zIndex": 5,
+          "widthName": 73.82493591308594,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "2af4e18e-c030-4fbe-acf2-d04fdfe5d3d2"
+      },
+      {
+        "name": "UsableTalentEffects",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "b4cf427f-deea-4a8d-9dbc-e707bd9606a0"
+          },
+          {
+            "name": "Description",
+            "comment": "",
+            "dataType": "NVARCHAR(Max)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.95289611816406,
+              "widthComment": 60,
+              "widthDataType": 103.55592346191406,
+              "widthDefault": 60
+            },
+            "id": "1c7c3f39-da22-4e67-af3f-15f762a04fbc"
+          },
+          {
+            "name": "TalentCostModifier",
+            "comment": "",
+            "dataType": "NVARCHAR(Max)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 117.42686462402344,
+              "widthComment": 60,
+              "widthDataType": 103.55592346191406,
+              "widthDefault": 60
+            },
+            "id": "7671588c-3794-4e3b-b97e-e723106d3cba"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 572.0006,
+          "top": 247.5993,
+          "zIndex": 106,
+          "widthName": 121.26187133789062,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "6a5928a7-aa5f-49ab-b519-e44b363ac109"
+      },
+      {
+        "name": "TalentTweaks",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "f75e5a51-7d57-466e-b7a6-109f5ceb4282"
+          },
+          {
+            "name": "Description",
+            "comment": "",
+            "dataType": "NVARCHAR(Max)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.95289611816406,
+              "widthComment": 60,
+              "widthDataType": 103.55592346191406,
+              "widthDefault": 60
+            },
+            "id": "6a74c078-11f1-41b1-814b-f7f1dd925e46"
+          },
+          {
+            "name": "MovementPointCost",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 126.35786437988281,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "bc0ae1e7-1c15-41bf-bd0e-9dae7f20220f"
+          },
+          {
+            "name": "TalentCost",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 65.89492797851562,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "cd478c06-88a2-4334-a824-3921e3241636"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 571.9999,
+          "top": 382.1631,
+          "zIndex": 107,
+          "widthName": 83.87391662597656,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "1e3389c5-f0a4-4670-9eb8-97ea3fe38e83"
+      },
+      {
+        "name": "Talents",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "a85a8a9a-39d3-437b-a24b-fadab44416da"
+          },
+          {
+            "name": "TalentUseType",
+            "comment": "",
+            "dataType": "NVARCHAR(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 90.88090515136719,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "d3778ae4-3586-42b9-97eb-48ec2565f241"
+          },
+          {
+            "name": "IsPassive",
+            "comment": "",
+            "dataType": "Boolean",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "1ceb593e-cf51-4769-bc9d-dd4675ca7a4f"
+          },
+          {
+            "name": "PassiveTalentEffectId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 130.63485717773438,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "7c4e13f3-f2f9-4bf0-b427-695bcf5e0f1c"
+          },
+          {
+            "name": "UsableTalentEffectId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 127.43687438964844,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ef69a042-ab2f-4bf4-aeb1-efcfaac9b3c5"
+          },
+          {
+            "name": "TalentTweakId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 90.04891967773438,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "2e8f6703-a7d4-4870-8b59-8569c93a1f16"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 2.6668,
+          "top": 392.3856,
+          "zIndex": 302,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "797f4111-7437-4e4d-b2a4-fdf8df673ed1"
+      },
+      {
+        "name": "SpellAttributes",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "f5048567-f92e-47e6-bb70-b95a1da9b1f5"
+          },
+          {
+            "name": "AttributeType",
+            "comment": "",
+            "dataType": "NVARCHAR(Max)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 85.3948974609375,
+              "widthComment": 60,
+              "widthDataType": 103.55592346191406,
+              "widthDefault": 60
+            },
+            "id": "5b9a2413-832f-479a-8e79-a4177d4550a6"
+          },
+          {
+            "name": "AttributeValue",
+            "comment": "",
+            "dataType": "NVARCHAR(Max)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 90.02288818359375,
+              "widthComment": 60,
+              "widthDataType": 103.55592346191406,
+              "widthDefault": 60
+            },
+            "id": "3ed37d60-877e-4a06-bd10-caf7c7d57223"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1554.3552,
+          "top": 88.3998,
+          "zIndex": 10,
+          "widthName": 91.86886596679688,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "e49de20e-ab5f-43d0-b899-ea29c72bb878"
+      },
+      {
+        "name": "Spells",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "e0844516-f7d5-4935-b87b-013e4cf52d01"
+          },
+          {
+            "name": "Name",
+            "comment": "",
+            "dataType": "NVARCHAR(40)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "6c1306ba-3e41-4364-b84d-1ea80badaf42"
+          },
+          {
+            "name": "CastingStat",
+            "comment": "",
+            "dataType": "NVARCHAR(4)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.6279296875,
+              "widthComment": 60,
+              "widthDataType": 85.03091430664062,
+              "widthDefault": 60
+            },
+            "id": "e8a729cf-d196-40cd-b97b-8e46002646b3"
+          },
+          {
+            "name": "TargetTypeId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 82.06692504882812,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "0280fb8b-cb52-4689-9cd3-b12e16f0f558"
+          },
+          {
+            "name": "SpellTypeId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 72.49891662597656,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "d21ac48f-43df-45de-840d-aa5807f4bb75"
+          },
+          {
+            "name": "Range",
+            "comment": "",
+            "dataType": "NVARCHAR(30)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "a5c0d2c0-1d4a-4554-888e-45e84bb941f4"
+          },
+          {
+            "name": "MagicTypeId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 79.99993896484375,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "d7d780d6-bb79-4d11-ad16-aed5f6de5f3c"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1049.2005,
+          "top": 39.4661,
+          "zIndex": 283,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "306552fb-41dc-4a5f-8c38-4010c720d2ca"
+      },
+      {
+        "name": "Weapons",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "676fe31a-1d4a-41ca-9c59-819048477d6b"
+          },
+          {
+            "name": "Name",
+            "comment": "",
+            "dataType": "NVARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 99.90289306640625,
+              "widthDefault": 60
+            },
+            "id": "c43d644a-e735-4a14-b156-9e90f9c37423"
+          },
+          {
+            "name": "LowAttackRange",
+            "comment": "",
+            "dataType": "NVARCHAR(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 103.54290771484375,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "d6c11ed8-73c9-4974-9d20-2e76ab07f0b7"
+          },
+          {
+            "name": "HighAttackRange",
+            "comment": "",
+            "dataType": "NVARCHAR(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 107.92390441894531,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "a3385f64-362e-4170-aa4f-982cfbe9b13b"
+          },
+          {
+            "name": "LowThrownRange",
+            "comment": "",
+            "dataType": "NVARCHAR(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 111.60292053222656,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "2023a7d6-31ea-4a58-92ed-f297e55f2eab"
+          },
+          {
+            "name": "HighThrownRange",
+            "comment": "",
+            "dataType": "NVARCHAR(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 115.98391723632812,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "ce8a6e88-cfee-46e8-9e8d-65803e8982d4"
+          },
+          {
+            "name": "AttackingStat",
+            "comment": "",
+            "dataType": "NVARCHAR(10)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 83.36691284179688,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "06a382b1-94eb-425e-b8b7-e34cf88ee206"
+          },
+          {
+            "name": "TargetStat",
+            "comment": "",
+            "dataType": "NVARCHAR(10)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 64.55593872070312,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "382eae3d-b8cc-4aa7-9597-8017efe6e934"
+          },
+          {
+            "name": "Is2Handed",
+            "comment": "",
+            "dataType": "Boolean",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 68.35194396972656,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "34cdfbc5-808a-4e6a-bb81-f166f3d45807"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 0,
+          "top": 717.6891,
+          "zIndex": 377,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "3f550b7d-3c82-4919-ba3b-16d17abc8031"
+      },
+      {
+        "name": "Items",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "0b547570-22a0-4749-b99b-aaae37e41d78"
+          },
+          {
+            "name": "Name",
+            "comment": "",
+            "dataType": "NVARCHAR(Max)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 103.55592346191406,
+              "widthDefault": 60
+            },
+            "id": "7c9f3fed-accb-4feb-bd5c-ff5233f2e37e"
+          },
+          {
+            "name": "Effect",
+            "comment": "",
+            "dataType": "NVARCHAR(Max)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 103.55592346191406,
+              "widthDefault": 60
+            },
+            "id": "e44599eb-b6e7-4de8-8ac5-fb588ed678f0"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 7.7033,
+          "top": 1313.2001,
+          "zIndex": 373,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "fdff7fda-a95c-46bc-b69c-1be466aadb73"
+      },
+      {
+        "name": "Skills",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "002eb868-b73d-4273-8120-badb75848c4e"
+          },
+          {
+            "name": "Name",
+            "comment": "",
+            "dataType": "NVARCHAR(30)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "6ee7c70e-9091-4929-9f46-2af249b265cd"
+          },
+          {
+            "name": "Description",
+            "comment": "",
+            "dataType": "NVARCHAR(Max)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.95289611816406,
+              "widthComment": 60,
+              "widthDataType": 103.55592346191406,
+              "widthDefault": 60
+            },
+            "id": "f2549fb7-5954-4a28-9280-d8aea8a1b243"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 4.7402,
+          "top": 1527.4196,
+          "zIndex": 374,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "8756d7bf-13f6-4477-b6fe-29ff7265a160"
+      },
+      {
+        "name": "Ancestries",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "3ea0988d-586c-49a5-9a6d-2f7be15af0df"
+          },
+          {
+            "name": "Name",
+            "comment": "",
+            "dataType": "NVARCHAR(30)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "b29e5518-72be-456c-9991-8b75a87a05d3"
+          },
+          {
+            "name": "Description",
+            "comment": "",
+            "dataType": "NVARCHAR(Max)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.95289611816406,
+              "widthComment": 60,
+              "widthDataType": 103.55592346191406,
+              "widthDefault": 60
+            },
+            "id": "974ed357-8a63-40dd-98f4-c1854a777571"
+          },
+          {
+            "name": "SkillIncreaseId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 90.51687622070312,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "1e889b65-e26f-488d-90a0-d3e20c1ee238"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 692.1693,
+          "top": 1203.6538,
+          "zIndex": 246,
+          "widthName": 65.11489868164062,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "08954c9d-3a15-4697-960a-a7c3d89ad6a4"
+      },
+      {
+        "name": "Heritages",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "b82b05fa-d4be-4112-a390-3d9610d428a2"
+          },
+          {
+            "name": "Name",
+            "comment": "",
+            "dataType": "NVARCHAR(120)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 99.90289306640625,
+              "widthDefault": 60
+            },
+            "id": "9b384b28-7dbb-4b7c-a345-9eb151c5088c"
+          },
+          {
+            "name": "Description",
+            "comment": "",
+            "dataType": "NVARCHAR(Max)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.95289611816406,
+              "widthComment": 60,
+              "widthDataType": 103.55592346191406,
+              "widthDefault": 60
+            },
+            "id": "b0a65622-60d2-44e4-b7d0-7c5c6598c5b5"
+          },
+          {
+            "name": "StatIncrease",
+            "comment": "",
+            "dataType": "NvarChar(10)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 77.7899169921875,
+              "widthComment": 60,
+              "widthDataType": 82.72990417480469,
+              "widthDefault": 60
+            },
+            "id": "4c4a2a03-423a-4dfc-bf20-e358f5d7a9a0"
+          },
+          {
+            "name": "SkillChoice1Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 87.01986694335938,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "74306e75-8f92-4bc0-9489-455d7d2f01ff"
+          },
+          {
+            "name": "SkillChoice2Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 87.01986694335938,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "4a8b211a-6542-4a23-ad6b-be1ec3b937b5"
+          },
+          {
+            "name": "SkillChoice3Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 87.01986694335938,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "3eab882f-fcb4-4bbb-909e-b4ff1cfc9bd9"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 693.3566,
+          "top": 987.9939,
+          "zIndex": 250,
+          "widthName": 61.22792053222656,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "b62dd9ab-3468-41d2-b0d5-90a1847cb959"
+      },
+      {
+        "name": "Trainings",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "7705465d-4836-4435-8bf1-a8b0f23d3a4b"
+          },
+          {
+            "name": "Name",
+            "comment": "",
+            "dataType": "NVARCHAR(120)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 99.90289306640625,
+              "widthDefault": 60
+            },
+            "id": "8dec9f59-118c-49c2-8e04-0e6c3e5e4657"
+          },
+          {
+            "name": "Description",
+            "comment": "",
+            "dataType": "NVARCHAR(MAX)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.95289611816406,
+              "widthComment": 60,
+              "widthDataType": 105.3109130859375,
+              "widthDefault": 60
+            },
+            "id": "60f9c4d2-28c1-4a41-b76e-add669694b55"
+          },
+          {
+            "name": "WeponiChoice1Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 109.28887939453125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "2eac3cdb-a0fb-408a-826a-0a9cf4d7a7f4"
+          },
+          {
+            "name": "WeponChoice2Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 105.93489074707031,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "111173ea-4ed6-4dba-b1d1-9300ccde7b7e"
+          },
+          {
+            "name": "WeaponChoice3Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 113.22789001464844,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "bd1633b1-58bc-45a0-a169-870bb688923b"
+          },
+          {
+            "name": "WeaponChoice4Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 113.22789001464844,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "f560f976-4a0d-4d96-9686-4b13ff116678"
+          },
+          {
+            "name": "WeaponChoice5Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 113.22789001464844,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "33bb7bc1-ccaa-47e1-a43d-709e08359bec"
+          },
+          {
+            "name": "PassiveTalent1Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 103.63388061523438,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ebb48671-2946-4f84-a257-db7eb15f5a78"
+          },
+          {
+            "name": "PassiveTalent2Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 103.63388061523438,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "d41d4eff-a5f3-48b0-8958-774b9a0eddb3"
+          },
+          {
+            "name": "PassiveTalent3Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 103.63388061523438,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "c1d7115a-6b39-4cc1-b3b7-217ccac11f93"
+          },
+          {
+            "name": "PassiveTalent4Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 103.63388061523438,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "cce72370-571b-4b6e-b951-f26a3e020904"
+          },
+          {
+            "name": "PassiveTalent5Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 103.63388061523438,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ff5b1d39-a1a3-4192-927f-06e0cd3d3160"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 681.584,
+          "top": 644.9734,
+          "zIndex": 254,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "b40a8a14-22a1-41b1-81ec-8e7a1455beb9"
+      },
+      {
+        "name": "LifeExperiences",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "34579ebf-0481-463c-8fb7-a59efcadff8a"
+          },
+          {
+            "name": "Name",
+            "comment": "",
+            "dataType": "NVARCHAR(120)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 99.90289306640625,
+              "widthDefault": 60
+            },
+            "id": "48f89ae9-c3eb-4e70-8ba5-d3dcf949788d"
+          },
+          {
+            "name": "Description",
+            "comment": "",
+            "dataType": "NVARCHAR(120)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.95289611816406,
+              "widthComment": 60,
+              "widthDataType": 99.90289306640625,
+              "widthDefault": 60
+            },
+            "id": "20b72382-65f8-46ce-a589-62dc2f270c1e"
+          },
+          {
+            "name": "SkillChoice1Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 87.01986694335938,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "5726ac7c-266f-4b03-906a-662fbaca3d36"
+          },
+          {
+            "name": "SkillChoice2Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 87.01986694335938,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "2274f223-748f-4523-bf69-fca70df75f50"
+          },
+          {
+            "name": "SkillChoice3Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 87.01986694335938,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "0cff8d42-629a-4ada-9dec-54a7d3f22621"
+          },
+          {
+            "name": "SkillChoice4Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 87.01986694335938,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "866c24a3-9c54-4dbc-8da2-8b69cb82a138"
+          },
+          {
+            "name": "SkillChoice5Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 87.01986694335938,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "a2f2eabb-ea17-4912-8a61-52cafd3df28c"
+          },
+          {
+            "name": "SkillChoice6Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 87.01986694335938,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "958fae61-f764-4488-b56c-7f3910697ad2"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 692.2808,
+          "top": 1360.9779,
+          "zIndex": 258,
+          "widthName": 97.28987121582031,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "d6f3c443-66be-4e18-97f7-ef4905519140"
+      },
+      {
+        "name": "CharacterSkills",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "83149265-6ac1-44fe-9a83-9b5438dfd639"
+          },
+          {
+            "name": "SkillId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "002125c8-8293-4ce9-b6f1-352d1126d5f2"
+          },
+          {
+            "name": "CharacterId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 73.98092651367188,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "282eee50-0879-4696-9eaf-297677a417e8"
+          },
+          {
+            "name": "SkillScore",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ce747d18-1393-475d-8827-7e7708254f15"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 692.933,
+          "top": 1632.2222,
+          "zIndex": 343,
+          "widthName": 91.94686889648438,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "16c587ca-2a4b-4c9f-87fd-3aaa40647da0"
+      },
+      {
+        "name": "Campaigns",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "bf69f238-7b83-4b4e-a1a2-6d609d230393"
+          },
+          {
+            "name": "Name",
+            "comment": "",
+            "dataType": "NVARCHAR(120)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 99.90289306640625,
+              "widthDefault": 60
+            },
+            "id": "be38f1ef-2e5f-4650-93d6-fe075e5054c3"
+          },
+          {
+            "name": "Description",
+            "comment": "",
+            "dataType": "NVARCHAR(Max)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.95289611816406,
+              "widthComment": 60,
+              "widthDataType": 103.55592346191406,
+              "widthDefault": 60
+            },
+            "id": "489cfc8d-b776-40f2-90e9-5662e918fe46"
+          },
+          {
+            "name": "GameMasterId",
+            "comment": "",
+            "dataType": "int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 93.35092163085938,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "1132bafb-dfe3-4da6-9f1f-4effbeb4cf8f"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1537.6167,
+          "top": 1765.2647,
+          "zIndex": 387,
+          "widthName": 70.56195068359375,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "c28851cf-2184-4ad1-b010-a18820eaf63d"
+      },
+      {
+        "name": "Characters",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "e083aa13-b956-49d4-a313-8cec35cf6c45"
+          },
+          {
+            "name": "OwnerId",
+            "comment": "",
+            "dataType": "int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "09a904b9-26cf-49e9-a357-904622b9d399"
+          },
+          {
+            "name": "CampaignId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 76.73695373535156,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "2098484b-bbec-46fc-bfdf-2e54a778dd52"
+          },
+          {
+            "name": "Name",
+            "comment": "",
+            "dataType": "NVARCHAR(200)",
+            "default": "New Character",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 99.90289306640625,
+              "widthDefault": 92.12889099121094
+            },
+            "id": "96deb502-05ba-4e36-95de-b6c21eae8ae5"
+          },
+          {
+            "name": "Height",
+            "comment": "",
+            "dataType": "NVARCHAR(15)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "7bdd8bae-b2f0-4858-b000-7adcac680c86"
+          },
+          {
+            "name": "Weight",
+            "comment": "",
+            "dataType": "NVARCHAR(15)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "f73e2e39-73da-447f-a003-9d9047b10587"
+          },
+          {
+            "name": "Age",
+            "comment": "",
+            "dataType": "NVARCHAR(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 92.46690368652344,
+              "widthDefault": 60
+            },
+            "id": "02b7be3d-b444-48c8-8814-dd8d45c980db"
+          },
+          {
+            "name": "Level",
+            "comment": "",
+            "dataType": "Int",
+            "default": "1",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "c1f8d5ed-08d3-4a8e-a9ef-a1018555db07"
+          },
+          {
+            "name": "AncestryId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 67.23391723632812,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "b0391c3e-4116-47a0-8494-f81e759a3fc3"
+          },
+          {
+            "name": "HeritageId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 67.40292358398438,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "2a5e8d19-b14b-426a-adf6-965ef8f93c3f"
+          },
+          {
+            "name": "TrainingId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 64.1529541015625,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "b915059c-0a68-48d7-a161-7ad8c69cb2d1"
+          },
+          {
+            "name": "LifeExperienceId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 103.46487426757812,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "37360ec7-a301-43c2-ac5e-bd74aa8b1d60"
+          },
+          {
+            "name": "MindScore",
+            "comment": "",
+            "dataType": "Int",
+            "default": "1",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 66.85693359375,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "1c113931-1115-47e7-ad15-8b24ee0fdb17"
+          },
+          {
+            "name": "BodyScore",
+            "comment": "",
+            "dataType": "Int",
+            "default": "1",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 66.6229248046875,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "91d854c3-9524-4493-ad5c-5ee766797554"
+          },
+          {
+            "name": "ResilienceScore",
+            "comment": "",
+            "dataType": "Int",
+            "default": "1",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 96.32785034179688,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "3f17ab1a-6304-46f2-a066-38353d0695d7"
+          },
+          {
+            "name": "SoulScore",
+            "comment": "",
+            "dataType": "Int",
+            "default": "1",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 62.07292175292969,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "4d2d1c9a-ec96-4d9e-8f71-5403437bc80b"
+          },
+          {
+            "name": "MovementScore",
+            "comment": "",
+            "dataType": "Int",
+            "default": "2",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 101.22889709472656,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "626363a6-6247-41e2-a74d-e2ad7d75d8c0"
+          },
+          {
+            "name": "CurrentHp",
+            "comment": "",
+            "dataType": "Int",
+            "default": "3",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 66.41493225097656,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "1fdc9c8f-72b8-4dbe-8589-4cbf229254f3"
+          },
+          {
+            "name": "MovementPoints",
+            "comment": "",
+            "dataType": "Int",
+            "default": "2",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 105.58389282226562,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "81b704c1-8c15-4a92-9b97-5d2fc9b64035"
+          },
+          {
+            "name": "TalentPoints",
+            "comment": "",
+            "dataType": "Int",
+            "default": "1",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 76.93191528320312,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "de3b4483-1644-4f59-b5ee-950f26516231"
+          },
+          {
+            "name": "WeaponProficiencies",
+            "comment": "",
+            "dataType": "NVARCHAR(Max)",
+            "default": "\"\"",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 129.12684631347656,
+              "widthComment": 60,
+              "widthDataType": 103.55592346191406,
+              "widthDefault": 60
+            },
+            "id": "96d7e8be-1165-4a96-bf70-1f4b18d6a1ad"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1361.0665,
+          "top": 685.1891,
+          "zIndex": 380,
+          "widthName": 67.80592346191406,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "aa463233-c7ae-47ba-844e-83f89bb2427a"
+      },
+      {
+        "name": "CharacterSpells",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "0faec6e2-ae12-4e92-936c-8a88f88e0743"
+          },
+          {
+            "name": "SpellId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "2a99f09d-0e2c-4697-81fd-fb41d56688fc"
+          },
+          {
+            "name": "CharacterId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 73.98092651367188,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "c2887b58-4d68-4461-888a-8173b9e0c94d"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1588.3533,
+          "top": 385.0327,
+          "zIndex": 290,
+          "widthName": 96.97787475585938,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "e69318a2-716a-445a-828e-38e5f16577cf"
+      },
+      {
+        "name": "CharacterLevelUps",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ff83c2e2-c261-4eaf-9078-3c09ae2a4758"
+          },
+          {
+            "name": "LevelNumber",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 83.93890380859375,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "5b6626e1-ac83-48da-a100-a1ce108ab2f8"
+          },
+          {
+            "name": "CharacterId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 73.98092651367188,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "39aadd16-df12-465c-a788-e15a13fab455"
+          },
+          {
+            "name": "TalentId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "8cedb914-9dd5-4aab-b752-e67987bc87e5"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1053.643,
+          "top": 489.3372,
+          "zIndex": 305,
+          "widthName": 116.47785949707031,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "0cd182d7-6efe-4890-bec1-dab9777df7e7"
+      },
+      {
+        "name": "CharacterInventorySlots",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Id",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "20d017e9-d28a-4d2d-af7a-b0243925aea9"
+          },
+          {
+            "name": "ItemId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "75248d6b-9601-4571-b1e2-28bfff4a3e4b"
+          },
+          {
+            "name": "ItemCount",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 67.42893981933594,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "cadc62e0-c5c2-4597-b288-361fea5e16b1"
+          },
+          {
+            "name": "WeaponId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 64.75096130371094,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ffc5eceb-b0ea-487c-afa9-fe873446e5df"
+          },
+          {
+            "name": "CharacterId",
+            "comment": "",
+            "dataType": "Int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 73.98092651367188,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "0dceb0a7-5b8b-4862-8ae0-d3508e641a59"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 28.1271,
+          "top": 1036.7275,
+          "zIndex": 384,
+          "widthName": 149.82281494140625,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "3cd978ef-b127-4e58-a302-1d148697edae"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Ring",
+        "start": {
+          "tableId": "2af4e18e-c030-4fbe-acf2-d04fdfe5d3d2",
+          "columnIds": [
+            "7795c873-5588-4bdf-8689-f51c14e1fb2e"
+          ],
+          "x": 555.4652,
+          "y": 150.464,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "d18f020d-127a-4726-9797-a85dc36d52fe",
+          "columnIds": [
+            "d9cae8f8-afcd-4c93-bf92-4f67fd6fdc45"
+          ],
+          "x": 427.03863178710935,
+          "y": 151.0749,
+          "direction": "right"
+        },
+        "constraintName": "fk_magictypes_to_passivetalenteffects",
+        "visible": true,
+        "id": "10fab150-32d1-49ee-bd7a-2b6c05fd949d"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Ring",
+        "start": {
+          "tableId": "d18f020d-127a-4726-9797-a85dc36d52fe",
+          "columnIds": [
+            "5252c312-e8cf-421d-b9b8-cab882b48655"
+          ],
+          "x": 225.6217158935547,
+          "y": 247.0749,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "797f4111-7437-4e4d-b2a4-fdf8df673ed1",
+          "columnIds": [
+            "7c4e13f3-f2f9-4bf0-b427-695bcf5e0f1c"
+          ],
+          "x": 227.7176804321289,
+          "y": 392.3856,
+          "direction": "top"
+        },
+        "constraintName": "fk_passivetalenteffects_to_talents",
+        "visible": true,
+        "id": "3a874200-384c-4df6-8a2b-a201ae8a1b0a"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Ring",
+        "start": {
+          "tableId": "6a5928a7-aa5f-49ab-b519-e44b363ac109",
+          "columnIds": [
+            "b4cf427f-deea-4a8d-9dbc-e707bd9606a0"
+          ],
+          "x": 572.0006,
+          "y": 312.84929999999997,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "797f4111-7437-4e4d-b2a4-fdf8df673ed1",
+          "columnIds": [
+            "ef69a042-ab2f-4bf4-aeb1-efcfaac9b3c5"
+          ],
+          "x": 452.76856086425784,
+          "y": 428.3856,
+          "direction": "right"
+        },
+        "constraintName": "fk_usabletalenteffects_to_talents",
+        "visible": true,
+        "id": "2031db20-4ccf-46ca-842f-f1f80005a9f6"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Ring",
+        "start": {
+          "tableId": "1e3389c5-f0a4-4670-9eb8-97ea3fe38e83",
+          "columnIds": [
+            "f75e5a51-7d57-466e-b7a6-109f5ceb4282"
+          ],
+          "x": 571.9999,
+          "y": 457.6631,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "797f4111-7437-4e4d-b2a4-fdf8df673ed1",
+          "columnIds": [
+            "2e8f6703-a7d4-4870-8b59-8569c93a1f16"
+          ],
+          "x": 452.76856086425784,
+          "y": 404.3856,
+          "direction": "right"
+        },
+        "constraintName": "fk_talenttweaks_to_talents",
+        "visible": true,
+        "id": "975cbdfe-8520-4c93-b28b-acbbc82b9f4d"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "e49de20e-ab5f-43d0-b899-ea29c72bb878",
+          "columnIds": [
+            "f5048567-f92e-47e6-bb70-b95a1da9b1f5"
+          ],
+          "x": 1554.3552,
+          "y": 121.0248,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "306552fb-41dc-4a5f-8c38-4010c720d2ca",
+          "columnIds": [
+            "0280fb8b-cb52-4689-9cd3-b12e16f0f558"
+          ],
+          "x": 1450.7343287353515,
+          "y": 74.88276666666667,
+          "direction": "right"
+        },
+        "constraintName": "fk_spellattributes_to_spells",
+        "visible": true,
+        "id": "df54f630-d258-46f4-89eb-e5b805ab9ae3"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "e49de20e-ab5f-43d0-b899-ea29c72bb878",
+          "columnIds": [
+            "f5048567-f92e-47e6-bb70-b95a1da9b1f5"
+          ],
+          "x": 1554.3552,
+          "y": 186.2748,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "306552fb-41dc-4a5f-8c38-4010c720d2ca",
+          "columnIds": [
+            "d21ac48f-43df-45de-840d-aa5807f4bb75"
+          ],
+          "x": 1450.7343287353515,
+          "y": 145.71609999999998,
+          "direction": "right"
+        },
+        "constraintName": "fk_spellattributes_to_spells",
+        "visible": true,
+        "id": "888e3fe6-672b-4d6f-af4b-5bc8b9e773bf"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "2af4e18e-c030-4fbe-acf2-d04fdfe5d3d2",
+          "columnIds": [
+            "7795c873-5588-4bdf-8689-f51c14e1fb2e"
+          ],
+          "x": 939.4880424072265,
+          "y": 150.464,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "306552fb-41dc-4a5f-8c38-4010c720d2ca",
+          "columnIds": [
+            "d7d780d6-bb79-4d11-ad16-aed5f6de5f3c"
+          ],
+          "x": 1049.2005,
+          "y": 145.71609999999998,
+          "direction": "left"
+        },
+        "constraintName": "fk_magictypes_to_spells",
+        "visible": true,
+        "id": "f0eff46f-9c28-4b21-80f0-b5f20e402690"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "8756d7bf-13f6-4477-b6fe-29ff7265a160",
+          "columnIds": [
+            "002eb868-b73d-4273-8120-badb75848c4e"
+          ],
+          "x": 407.24901958007814,
+          "y": 1628.260509090908,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b62dd9ab-3468-41d2-b0d5-90a1847cb959",
+          "columnIds": [
+            "74306e75-8f92-4bc0-9489-455d7d2f01ff"
+          ],
+          "x": 693.3566,
+          "y": 1023.4105666666668,
+          "direction": "left"
+        },
+        "constraintName": "fk_skills_to_heritages",
+        "visible": true,
+        "id": "03d3655d-df08-4285-a2d9-3719eec8a446"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "8756d7bf-13f6-4477-b6fe-29ff7265a160",
+          "columnIds": [
+            "002eb868-b73d-4273-8120-badb75848c4e"
+          ],
+          "x": 407.24901958007814,
+          "y": 1640.1241454545443,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b62dd9ab-3468-41d2-b0d5-90a1847cb959",
+          "columnIds": [
+            "4a8b211a-6542-4a23-ad6b-be1ec3b937b5"
+          ],
+          "x": 693.3566,
+          "y": 1094.2439000000002,
+          "direction": "left"
+        },
+        "constraintName": "fk_skills_to_heritages",
+        "visible": true,
+        "id": "bbaa7fac-9242-4995-b5ff-896fe8317965"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "8756d7bf-13f6-4477-b6fe-29ff7265a160",
+          "columnIds": [
+            "002eb868-b73d-4273-8120-badb75848c4e"
+          ],
+          "x": 407.24901958007814,
+          "y": 1651.9877818181806,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b62dd9ab-3468-41d2-b0d5-90a1847cb959",
+          "columnIds": [
+            "3eab882f-fcb4-4bbb-909e-b4ff1cfc9bd9"
+          ],
+          "x": 693.3566,
+          "y": 1165.0772333333334,
+          "direction": "left"
+        },
+        "constraintName": "fk_skills_to_heritages",
+        "visible": true,
+        "id": "422894c0-eb05-4c40-95dd-c61b31211999"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "8756d7bf-13f6-4477-b6fe-29ff7265a160",
+          "columnIds": [
+            "002eb868-b73d-4273-8120-badb75848c4e"
+          ],
+          "x": 407.24901958007814,
+          "y": 1616.3968727272718,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "08954c9d-3a15-4697-960a-a7c3d89ad6a4",
+          "columnIds": [
+            "1e889b65-e26f-488d-90a0-d3e20c1ee238"
+          ],
+          "x": 692.1693,
+          "y": 1279.1538,
+          "direction": "left"
+        },
+        "constraintName": "fk_skills_to_ancestries",
+        "visible": true,
+        "id": "a27d4b5a-b4c7-4387-83db-e4f88ef29d89"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "3f550b7d-3c82-4919-ba3b-16d17abc8031",
+          "columnIds": [
+            "676fe31a-1d4a-41ca-9c59-819048477d6b"
+          ],
+          "x": 442.8868103027344,
+          "y": 743.0391000000001,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b40a8a14-22a1-41b1-81ec-8e7a1455beb9",
+          "columnIds": [
+            "2eac3cdb-a0fb-408a-826a-0a9cf4d7a7f4"
+          ],
+          "x": 681.584,
+          "y": 728.8483999999999,
+          "direction": "left"
+        },
+        "constraintName": "fk_weapons_to_trainings",
+        "visible": true,
+        "id": "f6f31a64-d896-4ba2-9b87-9da87b9984d6"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "3f550b7d-3c82-4919-ba3b-16d17abc8031",
+          "columnIds": [
+            "676fe31a-1d4a-41ca-9c59-819048477d6b"
+          ],
+          "x": 442.8868103027344,
+          "y": 793.7391000000001,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b40a8a14-22a1-41b1-81ec-8e7a1455beb9",
+          "columnIds": [
+            "111173ea-4ed6-4dba-b1d1-9300ccde7b7e"
+          ],
+          "x": 681.584,
+          "y": 661.7484,
+          "direction": "left"
+        },
+        "constraintName": "fk_weapons_to_trainings",
+        "visible": true,
+        "id": "df4421b7-5b43-4571-9ee0-cb56002ccad5"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "3f550b7d-3c82-4919-ba3b-16d17abc8031",
+          "columnIds": [
+            "676fe31a-1d4a-41ca-9c59-819048477d6b"
+          ],
+          "x": 442.8868103027344,
+          "y": 844.4391000000002,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b40a8a14-22a1-41b1-81ec-8e7a1455beb9",
+          "columnIds": [
+            "bd1633b1-58bc-45a0-a169-870bb688923b"
+          ],
+          "x": 681.584,
+          "y": 695.2983999999999,
+          "direction": "left"
+        },
+        "constraintName": "fk_weapons_to_trainings",
+        "visible": true,
+        "id": "c217c4c4-ec0d-4e17-bb62-55b940358f54"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "3f550b7d-3c82-4919-ba3b-16d17abc8031",
+          "columnIds": [
+            "676fe31a-1d4a-41ca-9c59-819048477d6b"
+          ],
+          "x": 442.8868103027344,
+          "y": 895.1391000000002,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b40a8a14-22a1-41b1-81ec-8e7a1455beb9",
+          "columnIds": [
+            "f560f976-4a0d-4d96-9686-4b13ff116678"
+          ],
+          "x": 681.584,
+          "y": 762.3983999999998,
+          "direction": "left"
+        },
+        "constraintName": "fk_weapons_to_trainings",
+        "visible": true,
+        "id": "8cf5d228-ed05-4bc6-bb13-3a259344a3c0"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "3f550b7d-3c82-4919-ba3b-16d17abc8031",
+          "columnIds": [
+            "676fe31a-1d4a-41ca-9c59-819048477d6b"
+          ],
+          "x": 442.8868103027344,
+          "y": 945.8391000000003,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b40a8a14-22a1-41b1-81ec-8e7a1455beb9",
+          "columnIds": [
+            "33bb7bc1-ccaa-47e1-a43d-709e08359bec"
+          ],
+          "x": 681.584,
+          "y": 795.9483999999998,
+          "direction": "left"
+        },
+        "constraintName": "fk_weapons_to_trainings",
+        "visible": true,
+        "id": "a88ccabc-0bc0-45fc-aa09-fb0569eafb3d"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "797f4111-7437-4e4d-b2a4-fdf8df673ed1",
+          "columnIds": [
+            "a85a8a9a-39d3-437b-a24b-fadab44416da"
+          ],
+          "x": 452.76856086425784,
+          "y": 452.3856,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b40a8a14-22a1-41b1-81ec-8e7a1455beb9",
+          "columnIds": [
+            "ebb48671-2946-4f84-a257-db7eb15f5a78"
+          ],
+          "x": 681.584,
+          "y": 963.6983999999995,
+          "direction": "left"
+        },
+        "constraintName": "fk_talents_to_trainings",
+        "visible": true,
+        "id": "a50b2352-2324-46bd-9c7b-69f931c6c73b"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "797f4111-7437-4e4d-b2a4-fdf8df673ed1",
+          "columnIds": [
+            "a85a8a9a-39d3-437b-a24b-fadab44416da"
+          ],
+          "x": 452.76856086425784,
+          "y": 476.3856,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b40a8a14-22a1-41b1-81ec-8e7a1455beb9",
+          "columnIds": [
+            "d41d4eff-a5f3-48b0-8958-774b9a0eddb3"
+          ],
+          "x": 681.584,
+          "y": 930.1483999999996,
+          "direction": "left"
+        },
+        "constraintName": "fk_talents_to_trainings",
+        "visible": true,
+        "id": "c79fb6dd-25c6-4b9d-8023-a4081ca9c48e"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "797f4111-7437-4e4d-b2a4-fdf8df673ed1",
+          "columnIds": [
+            "a85a8a9a-39d3-437b-a24b-fadab44416da"
+          ],
+          "x": 452.76856086425784,
+          "y": 500.3856,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b40a8a14-22a1-41b1-81ec-8e7a1455beb9",
+          "columnIds": [
+            "c1d7115a-6b39-4cc1-b3b7-217ccac11f93"
+          ],
+          "x": 681.584,
+          "y": 896.5983999999996,
+          "direction": "left"
+        },
+        "constraintName": "fk_talents_to_trainings",
+        "visible": true,
+        "id": "ef252582-8390-4b59-900a-62a47ab3e8fd"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "797f4111-7437-4e4d-b2a4-fdf8df673ed1",
+          "columnIds": [
+            "a85a8a9a-39d3-437b-a24b-fadab44416da"
+          ],
+          "x": 452.76856086425784,
+          "y": 524.3856000000001,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b40a8a14-22a1-41b1-81ec-8e7a1455beb9",
+          "columnIds": [
+            "cce72370-571b-4b6e-b951-f26a3e020904"
+          ],
+          "x": 681.584,
+          "y": 863.0483999999997,
+          "direction": "left"
+        },
+        "constraintName": "fk_talents_to_trainings",
+        "visible": true,
+        "id": "0917cfdf-e60c-4bc6-bf25-11aac4bbae28"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "797f4111-7437-4e4d-b2a4-fdf8df673ed1",
+          "columnIds": [
+            "a85a8a9a-39d3-437b-a24b-fadab44416da"
+          ],
+          "x": 452.76856086425784,
+          "y": 548.3856000000001,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b40a8a14-22a1-41b1-81ec-8e7a1455beb9",
+          "columnIds": [
+            "ff5b1d39-a1a3-4192-927f-06e0cd3d3160"
+          ],
+          "x": 681.584,
+          "y": 829.4983999999997,
+          "direction": "left"
+        },
+        "constraintName": "fk_talents_to_trainings",
+        "visible": true,
+        "id": "0f631680-e26d-4b6c-9d27-383fbc4f4a08"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "8756d7bf-13f6-4477-b6fe-29ff7265a160",
+          "columnIds": [
+            "002eb868-b73d-4273-8120-badb75848c4e"
+          ],
+          "x": 407.24901958007814,
+          "y": 1533.351418181818,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "d6f3c443-66be-4e18-97f7-ef4905519140",
+          "columnIds": [
+            "5726ac7c-266f-4b03-906a-662fbaca3d36"
+          ],
+          "x": 692.2808,
+          "y": 1382.1029,
+          "direction": "left"
+        },
+        "constraintName": "fk_skills_to_lifeexperiences",
+        "visible": true,
+        "id": "ef7e5aa7-31d8-40f5-a54e-054294bd420b"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "8756d7bf-13f6-4477-b6fe-29ff7265a160",
+          "columnIds": [
+            "002eb868-b73d-4273-8120-badb75848c4e"
+          ],
+          "x": 407.24901958007814,
+          "y": 1545.2150545454542,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "d6f3c443-66be-4e18-97f7-ef4905519140",
+          "columnIds": [
+            "2274f223-748f-4523-bf69-fca70df75f50"
+          ],
+          "x": 692.2808,
+          "y": 1424.3529,
+          "direction": "left"
+        },
+        "constraintName": "fk_skills_to_lifeexperiences",
+        "visible": true,
+        "id": "28437000-a114-4ee3-9ba1-400a6540f568"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "8756d7bf-13f6-4477-b6fe-29ff7265a160",
+          "columnIds": [
+            "002eb868-b73d-4273-8120-badb75848c4e"
+          ],
+          "x": 407.24901958007814,
+          "y": 1557.0786909090905,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "d6f3c443-66be-4e18-97f7-ef4905519140",
+          "columnIds": [
+            "0cff8d42-629a-4ada-9dec-54a7d3f22621"
+          ],
+          "x": 692.2808,
+          "y": 1466.6029,
+          "direction": "left"
+        },
+        "constraintName": "fk_skills_to_lifeexperiences",
+        "visible": true,
+        "id": "81c2c95f-0727-4de8-8888-a19e39bed1a3"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "8756d7bf-13f6-4477-b6fe-29ff7265a160",
+          "columnIds": [
+            "002eb868-b73d-4273-8120-badb75848c4e"
+          ],
+          "x": 407.24901958007814,
+          "y": 1568.9423272727267,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "d6f3c443-66be-4e18-97f7-ef4905519140",
+          "columnIds": [
+            "866c24a3-9c54-4dbc-8da2-8b69cb82a138"
+          ],
+          "x": 692.2808,
+          "y": 1508.8529,
+          "direction": "left"
+        },
+        "constraintName": "fk_skills_to_lifeexperiences",
+        "visible": true,
+        "id": "96d19acb-30b9-43be-ba0c-f75d290cdbe6"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "8756d7bf-13f6-4477-b6fe-29ff7265a160",
+          "columnIds": [
+            "002eb868-b73d-4273-8120-badb75848c4e"
+          ],
+          "x": 407.24901958007814,
+          "y": 1580.805963636363,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "d6f3c443-66be-4e18-97f7-ef4905519140",
+          "columnIds": [
+            "a2f2eabb-ea17-4912-8a61-52cafd3df28c"
+          ],
+          "x": 692.2808,
+          "y": 1551.1029,
+          "direction": "left"
+        },
+        "constraintName": "fk_skills_to_lifeexperiences",
+        "visible": true,
+        "id": "a79dae57-f624-427e-ba6a-46618c8eca04"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "8756d7bf-13f6-4477-b6fe-29ff7265a160",
+          "columnIds": [
+            "002eb868-b73d-4273-8120-badb75848c4e"
+          ],
+          "x": 407.24901958007814,
+          "y": 1592.6695999999993,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "d6f3c443-66be-4e18-97f7-ef4905519140",
+          "columnIds": [
+            "958fae61-f764-4488-b56c-7f3910697ad2"
+          ],
+          "x": 692.2808,
+          "y": 1593.3529,
+          "direction": "left"
+        },
+        "constraintName": "fk_skills_to_lifeexperiences",
+        "visible": true,
+        "id": "4bce8c5e-9e91-4ef6-a8b4-c33638817864"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "8756d7bf-13f6-4477-b6fe-29ff7265a160",
+          "columnIds": [
+            "002eb868-b73d-4273-8120-badb75848c4e"
+          ],
+          "x": 407.24901958007814,
+          "y": 1604.5332363636355,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "16c587ca-2a4b-4c9f-87fd-3aaa40647da0",
+          "columnIds": [
+            "002125c8-8293-4ce9-b6f1-352d1126d5f2"
+          ],
+          "x": 692.933,
+          "y": 1707.7222,
+          "direction": "left"
+        },
+        "constraintName": "fk_skills_to_characterskills",
+        "visible": true,
+        "id": "ed7a4a4c-9dd1-47e7-bd69-d8247b5403b3"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "ca1d7387-40c1-4833-95c2-547d68af9ed5",
+          "columnIds": [
+            "7d80ec14-f69c-4799-a121-317a68bc439a"
+          ],
+          "x": 1459.8777670410157,
+          "y": 1727.3006,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "c28851cf-2184-4ad1-b010-a18820eaf63d",
+          "columnIds": [
+            "1132bafb-dfe3-4da6-9f1f-4effbeb4cf8f"
+          ],
+          "x": 1537.6167,
+          "y": 1840.7647,
+          "direction": "left"
+        },
+        "constraintName": "fk_users_to_campaigns",
+        "visible": true,
+        "id": "97751d93-1f21-4dcd-a053-b6cae84d556f"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "08954c9d-3a15-4697-960a-a7c3d89ad6a4",
+          "columnIds": [
+            "3ea0988d-586c-49a5-9a6d-2f7be15af0df"
+          ],
+          "x": 1113.2420996826172,
+          "y": 1279.1538,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "aa463233-c7ae-47ba-844e-83f89bb2427a",
+          "columnIds": [
+            "b0391c3e-4116-47a0-8494-f81e759a3fc3"
+          ],
+          "x": 1361.0665,
+          "y": 997.3766,
+          "direction": "left"
+        },
+        "constraintName": "fk_ancestries_to_characters",
+        "visible": true,
+        "id": "a8560995-f46f-44e3-b282-37ab1832549e"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "b62dd9ab-3468-41d2-b0d5-90a1847cb959",
+          "columnIds": [
+            "b82b05fa-d4be-4112-a390-3d9610d428a2"
+          ],
+          "x": 1110.9323904052735,
+          "y": 1094.2439,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "aa463233-c7ae-47ba-844e-83f89bb2427a",
+          "columnIds": [
+            "2a5e8d19-b14b-426a-adf6-965ef8f93c3f"
+          ],
+          "x": 1361.0665,
+          "y": 872.5016,
+          "direction": "left"
+        },
+        "constraintName": "fk_heritages_to_characters",
+        "visible": true,
+        "id": "49a8abe3-4d00-4fe8-8723-ce47b2131301"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "b40a8a14-22a1-41b1-81ec-8e7a1455beb9",
+          "columnIds": [
+            "7705465d-4836-4435-8bf1-a8b0f23d3a4b"
+          ],
+          "x": 1127.1228031005858,
+          "y": 812.7234,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "aa463233-c7ae-47ba-844e-83f89bb2427a",
+          "columnIds": [
+            "b915059c-0a68-48d7-a161-7ad8c69cb2d1"
+          ],
+          "x": 1361.0665,
+          "y": 747.6266,
+          "direction": "left"
+        },
+        "constraintName": "fk_trainings_to_characters",
+        "visible": true,
+        "id": "561073c2-cf72-4b6f-9dcf-0a56772d3886"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "d6f3c443-66be-4e18-97f7-ef4905519140",
+          "columnIds": [
+            "34579ebf-0481-463c-8fb7-a59efcadff8a"
+          ],
+          "x": 1106.2035600097656,
+          "y": 1487.7279,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "aa463233-c7ae-47ba-844e-83f89bb2427a",
+          "columnIds": [
+            "37360ec7-a301-43c2-ac5e-bd74aa8b1d60"
+          ],
+          "x": 1545.4958727874755,
+          "y": 1184.6891,
+          "direction": "bottom"
+        },
+        "constraintName": "fk_lifeexperiences_to_characters",
+        "visible": true,
+        "id": "88aeb59f-4156-4308-b5aa-0fb3d1a857e4"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "aa463233-c7ae-47ba-844e-83f89bb2427a",
+          "columnIds": [
+            "e083aa13-b956-49d4-a313-8cec35cf6c45"
+          ],
+          "x": 1729.925245574951,
+          "y": 685.1891,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "e69318a2-716a-445a-828e-38e5f16577cf",
+          "columnIds": [
+            "c2887b58-4d68-4461-888a-8173b9e0c94d"
+          ],
+          "x": 1768.843763256836,
+          "y": 515.5327,
+          "direction": "bottom"
+        },
+        "constraintName": "fk_characters_to_characterspells",
+        "visible": true,
+        "id": "20c61eaf-3f94-45f1-8b0f-7a629510ea89"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "306552fb-41dc-4a5f-8c38-4010c720d2ca",
+          "columnIds": [
+            "e0844516-f7d5-4935-b87b-013e4cf52d01"
+          ],
+          "x": 1450.7343287353515,
+          "y": 216.5494333333333,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "e69318a2-716a-445a-828e-38e5f16577cf",
+          "columnIds": [
+            "2a99f09d-0e2c-4697-81fd-fb41d56688fc"
+          ],
+          "x": 1588.3533,
+          "y": 450.2827,
+          "direction": "left"
+        },
+        "constraintName": "fk_spells_to_characterspells",
+        "visible": true,
+        "id": "ecc76e08-3625-41fd-bde4-81f8ef2f1b7f"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "aa463233-c7ae-47ba-844e-83f89bb2427a",
+          "columnIds": [
+            "e083aa13-b956-49d4-a313-8cec35cf6c45"
+          ],
+          "x": 1484.0194151916503,
+          "y": 685.1891,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "0cd182d7-6efe-4890-bec1-dab9777df7e7",
+          "columnIds": [
+            "39aadd16-df12-465c-a788-e15a13fab455"
+          ],
+          "x": 1424.5819038085938,
+          "y": 564.8371999999999,
+          "direction": "right"
+        },
+        "constraintName": "fk_characters_to_characterlevelups",
+        "visible": true,
+        "id": "9b74f2f0-285d-467c-8e29-4e750414367e"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "797f4111-7437-4e4d-b2a4-fdf8df673ed1",
+          "columnIds": [
+            "a85a8a9a-39d3-437b-a24b-fadab44416da"
+          ],
+          "x": 452.76856086425784,
+          "y": 572.3856000000001,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "0cd182d7-6efe-4890-bec1-dab9777df7e7",
+          "columnIds": [
+            "8cedb914-9dd5-4aab-b752-e67987bc87e5"
+          ],
+          "x": 1053.643,
+          "y": 564.8371999999999,
+          "direction": "left"
+        },
+        "constraintName": "fk_talents_to_characterlevelups",
+        "visible": true,
+        "id": "c7efd4e0-f7a5-4b9a-88db-b8dc90dacab6"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "c28851cf-2184-4ad1-b010-a18820eaf63d",
+          "columnIds": [
+            "bf69f238-7b83-4b4e-a1a2-6d609d230393"
+          ],
+          "x": 1749.5701225463868,
+          "y": 1765.2647,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "aa463233-c7ae-47ba-844e-83f89bb2427a",
+          "columnIds": [
+            "2098484b-bbec-46fc-bfdf-2e54a778dd52"
+          ],
+          "x": 1668.4487879791259,
+          "y": 1184.6891,
+          "direction": "bottom"
+        },
+        "constraintName": "fk_campaigns_to_characters",
+        "visible": true,
+        "id": "aead0f50-c641-45b7-b87a-ebf967780520"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "ca1d7387-40c1-4833-95c2-547d68af9ed5",
+          "columnIds": [
+            "7d80ec14-f69c-4799-a121-317a68bc439a"
+          ],
+          "x": 1459.8777670410157,
+          "y": 1596.8006,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "aa463233-c7ae-47ba-844e-83f89bb2427a",
+          "columnIds": [
+            "09a904b9-26cf-49e9-a357-904622b9d399"
+          ],
+          "x": 1422.542957595825,
+          "y": 1184.6891,
+          "direction": "bottom"
+        },
+        "constraintName": "fk_users_to_characters",
+        "visible": true,
+        "id": "878d8d01-0869-4716-9dba-188ee5e9b056"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "aa463233-c7ae-47ba-844e-83f89bb2427a",
+          "columnIds": [
+            "e083aa13-b956-49d4-a313-8cec35cf6c45"
+          ],
+          "x": 1791.4017031707763,
+          "y": 1184.6891,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "16c587ca-2a4b-4c9f-87fd-3aaa40647da0",
+          "columnIds": [
+            "282eee50-0879-4696-9eaf-297677a417e8"
+          ],
+          "x": 1053.9139265136719,
+          "y": 1707.7222,
+          "direction": "right"
+        },
+        "constraintName": "fk_characters_to_characterskills",
+        "visible": true,
+        "id": "8115afe1-e156-4648-b4f3-ebdada01a71e"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Ring",
+        "start": {
+          "tableId": "fdff7fda-a95c-46bc-b69c-1be466aadb73",
+          "columnIds": [
+            "0b547570-22a0-4749-b99b-aaae37e41d78"
+          ],
+          "x": 202.98126173095704,
+          "y": 1313.2001,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "3cd978ef-b127-4e58-a302-1d148697edae",
+          "columnIds": [
+            "75248d6b-9601-4571-b1e2-28bfff4a3e4b"
+          ],
+          "x": 208.61756325683592,
+          "y": 1208.2275,
+          "direction": "bottom"
+        },
+        "constraintName": "fk_items_to_characterinventory",
+        "visible": true,
+        "id": "284a6f2e-3752-422d-ab76-04d8931eed8d"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Ring",
+        "start": {
+          "tableId": "3f550b7d-3c82-4919-ba3b-16d17abc8031",
+          "columnIds": [
+            "676fe31a-1d4a-41ca-9c59-819048477d6b"
+          ],
+          "x": 221.4434051513672,
+          "y": 971.1891,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "3cd978ef-b127-4e58-a302-1d148697edae",
+          "columnIds": [
+            "ffc5eceb-b0ea-487c-afa9-fe873446e5df"
+          ],
+          "x": 208.61756325683592,
+          "y": 1036.7275,
+          "direction": "top"
+        },
+        "constraintName": "fk_weapons_to_characterinventory",
+        "visible": true,
+        "id": "87b5b930-189c-4027-91c6-d875f2694c64"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "aa463233-c7ae-47ba-844e-83f89bb2427a",
+          "columnIds": [
+            "e083aa13-b956-49d4-a313-8cec35cf6c45"
+          ],
+          "x": 1361.0665,
+          "y": 1122.2516,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "3cd978ef-b127-4e58-a302-1d148697edae",
+          "columnIds": [
+            "0dceb0a7-5b8b-4862-8ae0-d3508e641a59"
+          ],
+          "x": 389.10802651367186,
+          "y": 1122.4775,
+          "direction": "right"
+        },
+        "constraintName": "fk_characters_to_characterinventoryslots",
+        "visible": true,
+        "id": "510a0121-3373-48c8-8db0-9b7cdf8560e0"
+      }
+    ]
+  }
+}
