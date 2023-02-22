@@ -1,7 +1,16 @@
+using CharacterBuilder.Data.ApplicationDbContext;
+using CharacterBuilder.Data.Entities;
+using CharacterBuilder.Services.Configurations;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ApplicationDbContext>( options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddIdentityCore<UserEntity>().AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddAutoMapper(typeof(MapperProfile));
 
 var app = builder.Build();
 
