@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using CharacterBuilder.MVC.Data;
+using CharacterBuilder.Services.Item;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,8 @@ builder.Services.ConfigureApplicationCookie(options => {
     options.AccessDeniedPath = "/Identity/Account/AccessDenied";
     options.SlidingExpiration = true;
 });
+
+builder.Services.AddScoped<IItemService, ItemService>();
 
 builder.Services.AddControllersWithViews();
 
