@@ -11,7 +11,8 @@ namespace CharacterBuilder.Models.Campaign
         public int Id {get; set;}
         public string GameMasterName {get; set;}
         public string Name {get; set;}
-        public string Description {get; set;}
+        public string? Description {get; set;}
+        public List<string?> Players {get; set;}
         public List<CharacterListItem> Characters {get; set;}
         public DateTimeOffset CreatedUTC {get; set;}
     }

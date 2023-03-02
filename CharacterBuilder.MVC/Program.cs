@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using CharacterBuilder.MVC.Data;
 using CharacterBuilder.Services.Item;
+using CharacterBuilder.Services.Campaign;
+using CharacterBuilder.Services.CampaignPlayer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +29,8 @@ builder.Services.ConfigureApplicationCookie(options => {
 });
 
 builder.Services.AddScoped<IItemService, ItemService>();
+builder.Services.AddScoped<ICampaignService, CampaignService>();
+builder.Services.AddScoped<ICampaignPlayerService, CampaignPlayerService>();
 
 builder.Services.AddControllersWithViews();
 

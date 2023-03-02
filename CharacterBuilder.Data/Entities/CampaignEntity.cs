@@ -16,6 +16,6 @@ namespace CharacterBuilder.Data.Entities
         public string Name {get; set;} = "New Campaign";
         public string? Description {get; set;}
         public DateTimeOffset CreatedUTC {get; set;}
-        public List<CampaignPlayer> Players {get; set;} = new();
+        public List<CampaignPlayerEntity> Players {get; set;} = new();
     }
 }

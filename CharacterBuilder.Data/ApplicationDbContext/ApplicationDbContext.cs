@@ -15,7 +15,7 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser<int>,Identity
 
     public DbSet<CharacterEntity> Characters {get; set;}
     public DbSet<CampaignEntity> Campaigns {get; set;}
-    public DbSet<CampaignPlayer> CampaignPlayers {get; set;}
+    public DbSet<CampaignPlayerEntity> CampaignPlayers {get; set;}
     public DbSet<ItemEntity> Items {get; set;}
     public DbSet<WeaponEntity> Weapons {get; set;}
     public DbSet<CharacterInventorySlotEntity> InventorySlots {get; set;}

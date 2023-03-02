@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace CharacterBuilder.Data.Entities
 {
-    public class CampaignPlayer
+    public class CampaignPlayerEntity
     {
         public int Id { get; set; }
         public int PlayerId {get; set;}
