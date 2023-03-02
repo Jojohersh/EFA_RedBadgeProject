@@ -14,11 +14,11 @@ namespace CharacterBuilder.Models.Character
         public string? Weight { get; set; }
         public string? Age { get; set; }
 
-        public int? MindScore {get; set;}
-        public int? BodyScore {get; set;}
-        public int? ResilienceScore {get; set;}
-        public int? SoulScore {get; set;}
-        public int? MovementScore {get; set;}
+        public int MindScore {get; set;}=1;
+        public int BodyScore {get; set;}=1;
+        public int ResilienceScore {get; set;}=1;
+        public int SoulScore {get; set;}=1;
+        public int MovementScore {get; set;}=2;
         public string WeaponProficiencies {get; set;}="";
     }
 }

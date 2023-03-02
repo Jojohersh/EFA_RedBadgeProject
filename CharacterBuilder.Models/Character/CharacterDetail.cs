@@ -10,7 +10,7 @@ namespace CharacterBuilder.Models.Character
     {
         public int Id {get; set;}
         public string OwnerName {get; set;}
-        public int CampaignId {get; set;}
+        public int? CampaignId {get; set;}
         public string CampaignName {get; set;}
 
         public string Name {get; set;}
