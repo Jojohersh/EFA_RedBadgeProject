@@ -73,7 +73,7 @@ namespace CharacterBuilder.Services.Character
 
         public async Task<CharacterDetail> GetCharacterById(int Id)
         {
-            var character = _dbContext.Characters
+            var character = await _dbContext.Characters
                 .Include(c => c.Owner)
                 .Include(c => c.Campaign)
                 .Where(c => c.Id == Id)
@@ -98,7 +98,7 @@ namespace CharacterBuilder.Services.Character
                     //todo: Items = _inventoryService.GetItemsByCharacterId(Id),
                     //todo: Weapons = _inventoryService.GetWeaponsByCharacterId(Id)
                 })
-                .Single();
+                .SingleAsync();
                 return character;
         }
 
