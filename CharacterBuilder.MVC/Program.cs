@@ -4,6 +4,8 @@ using CharacterBuilder.MVC.Data;
 using CharacterBuilder.Services.Item;
 using CharacterBuilder.Services.Campaign;
 using CharacterBuilder.Services.CampaignPlayer;
+using CharacterBuilder.Services.Character;
+using CharacterBuilder.Services.Weapon;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +33,8 @@ builder.Services.ConfigureApplicationCookie(options => {
 builder.Services.AddScoped<IItemService, ItemService>();
 builder.Services.AddScoped<ICampaignService, CampaignService>();
 builder.Services.AddScoped<ICampaignPlayerService, CampaignPlayerService>();
+builder.Services.AddScoped<ICharacterService, CharacterService>();
+builder.Services.AddScoped<IWeaponService, WeaponService>();
 
 builder.Services.AddControllersWithViews();
 
