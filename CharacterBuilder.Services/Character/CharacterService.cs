@@ -43,32 +43,19 @@ namespace CharacterBuilder.Services.Character
             return await _dbContext.SaveChangesAsync() > 0;
         }
 
-        public async Task<bool> ClaimCharacterOwnershipAsync(int characterId, int newOwnerId)
+        public async Task<List<CharacterListItem>> GetAllCharactersByOwnerId(int Id)
         {
-            var character = await _dbContext.Characters.FindAsync(characterId);
-            if (character is null || character.OwnerId != null)
-                return false;
-            character.OwnerId = newOwnerId;
-            return await _dbContext.SaveChangesAsync() > 0;
-        }
-        public async Task<bool> RemoveCharacterOwnershipAsync(int characterId)
-        {
-            var character = await _dbContext.Characters.FindAsync(characterId);
-            if (character is null || character.OwnerId is null || character.CampaignId is null)
-                return false;
-            character.OwnerId = null;
-            return await _dbContext.SaveChangesAsync() > 0;
-        }
-
-
-        public Task<bool> DeleteCharacterAsync(int CharacterId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<CharacterListItem>> GetAllCharactersByOwnerId(int Id)
-        {
-            throw new NotImplementedException();
+            var characters = await _dbContext.Characters
+                .Include(c => c.Owner)
+                .Where(c => c.OwnerId == Id)
+                .Select(c => new CharacterListItem {
+                    Id = c.Id,
+                    OwnerName = c.Owner.UserName,
+                    Name = c.Name,
+                    Level = c.Level
+                })
+                .ToListAsync();
+            return characters;
         }
 
         public async Task<CharacterDetail> GetCharacterById(int Id)
@@ -101,11 +88,44 @@ namespace CharacterBuilder.Services.Character
                 .SingleAsync();
                 return character;
         }
-
-        
-        public Task<bool> UpdateCharacterAsync(CharacterEdit model)
+        public async Task<bool> UpdateCharacterAsync(CharacterEdit model)
         {
-            throw new NotImplementedException();
+            var existingCharacter = await _dbContext.Characters.FindAsync(model.Id);
+            if (existingCharacter is null)
+                return false;
+            existingCharacter.Name = model.Name;
+            existingCharacter.Height = model.Height;
+            existingCharacter.Weight = model.Weight;
+            existingCharacter.Age = model.Age;
+            existingCharacter.Level = model.Level;
+            existingCharacter.MindScore = model.MindScore;
+            existingCharacter.BodyScore = model.BodyScore;
+            existingCharacter.ResilienceScore = model.ResilienceScore;
+            existingCharacter.SoulScore = model.SoulScore;
+            existingCharacter.MovementScore = model.MovementScore;
+            existingCharacter.CurrentHp = model.CurrentHp;
+            existingCharacter.CurrentTalentPoints = model.CurrentTalentPoints;
+            existingCharacter.CurrentMovementPoints = model.CurrentMovementPoints;
+            existingCharacter.WeaponProficiencies = model.WeaponProficiencies;
+
+            return await _dbContext.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> ClaimCharacterOwnershipAsync(int characterId, int newOwnerId)
+        {
+            var character = await _dbContext.Characters.FindAsync(characterId);
+            if (character is null || character.OwnerId != null)
+                return false;
+            character.OwnerId = newOwnerId;
+            return await _dbContext.SaveChangesAsync() > 0;
+        }
+        public async Task<bool> RemoveCharacterOwnershipAsync(int characterId)
+        {
+            var character = await _dbContext.Characters.FindAsync(characterId);
+            if (character is null || character.OwnerId is null || character.CampaignId is null)
+                return false;
+            character.OwnerId = null;
+            return await _dbContext.SaveChangesAsync() > 0;
         }
 
         public async Task<bool> AddCharacterToCampaignAsync(int characterId, int campaignId)
@@ -124,6 +144,15 @@ namespace CharacterBuilder.Services.Character
             if (character is null || character.CampaignId is null || character.OwnerId is null)
                 return false;
             character.CampaignId = null;
+            return await _dbContext.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> DeleteCharacterAsync(int CharacterId)
+        {
+            var existingCharacter = await _dbContext.Characters.FindAsync(CharacterId);
+            if (existingCharacter is null)
+                return false;
+            _dbContext.Characters.Remove(existingCharacter);
             return await _dbContext.SaveChangesAsync() > 0;
         }
     }
