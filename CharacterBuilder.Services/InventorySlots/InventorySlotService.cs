@@ -95,14 +95,24 @@ namespace CharacterBuilder.Services.InventorySlots
                 .ToListAsync();
         }
 
-        public Task<bool> UpdateInventorySlotAsync(InventorySlotEdit model)
+        public async Task<bool> UpdateInventorySlotAsync(InventorySlotEdit model)
         {
-            throw new NotImplementedException();
+            var slotToUpdate = await _dbContext.InventorySlots.FindAsync(model.Id);
+            if (slotToUpdate is null || model.ItemCount < 0)
+                return false;
+            
+            slotToUpdate.ItemCount = model.ItemCount;
+            return await _dbContext.SaveChangesAsync() > 0;
         }
         
-        public Task<bool> DeleteInventorySlotAsync(int slotId)
+        public async Task<bool> DeleteInventorySlotAsync(int slotId)
         {
-            throw new NotImplementedException();
+            var slotToDelete = await _dbContext.InventorySlots.FindAsync(slotId);
+            if (slotToDelete is null)
+                return false;
+
+            _dbContext.InventorySlots.Remove(slotToDelete);
+            return await _dbContext.SaveChangesAsync() > 0;
         }
     }
 }
