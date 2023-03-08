@@ -14,13 +14,13 @@ namespace CharacterBuilder.MVC.Areas.Identity.Pages.Account.Manage
 {
     public class ChangePasswordModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<IdentityUser<int>> _userManager;
+        private readonly SignInManager<IdentityUser<int>> _signInManager;
         private readonly ILogger<ChangePasswordModel> _logger;
 
         public ChangePasswordModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager,
+            UserManager<IdentityUser<int>> userManager,
+            SignInManager<IdentityUser<int>> signInManager,
             ILogger<ChangePasswordModel> logger)
         {
             _userManager = userManager;
