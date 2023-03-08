@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CharacterBuilder.Data.Entities;
 using CharacterBuilder.Models.CharacterInventorySlot;
-using CharacterBuilder.MVC.Data;
+using CharacterBuilder.Data;
 using CharacterBuilder.Services.Item;
 using CharacterBuilder.Services.Weapon;
 using Microsoft.EntityFrameworkCore;

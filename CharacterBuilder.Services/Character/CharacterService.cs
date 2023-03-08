@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CharacterBuilder.Data;
 using CharacterBuilder.Data.Entities;
 using CharacterBuilder.Models.Character;
-using CharacterBuilder.MVC.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

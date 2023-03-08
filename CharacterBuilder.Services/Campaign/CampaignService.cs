@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using CharacterBuilder.Data.Entities;
 using CharacterBuilder.Models.Campaign;
 using CharacterBuilder.Models.Character;
-using CharacterBuilder.MVC.Data;
+using CharacterBuilder.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

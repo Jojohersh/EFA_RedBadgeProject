@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CharacterBuilder.Models.Item;
-using CharacterBuilder.MVC.Data;
+using CharacterBuilder.Data;
 using Microsoft.AspNetCore.Identity;
 using CharacterBuilder.Data.Entities;
 using Microsoft.EntityFrameworkCore;
