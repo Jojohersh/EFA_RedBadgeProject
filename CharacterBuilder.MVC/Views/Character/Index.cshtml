@@ -1,5 +1,32 @@
+@model IEnumerable<CharacterListItem>
+
 @{
     ViewData["Title"] = "Your Characters";
 }
 
-<h1>Hello world</h1>
+<div class="container">
+    <h1>Your Characters</h1>
+    @if (Model.Count() == 0)
+    {
+        <h2>You do not have any characters</h2>
+        <p>Click the button below to create a new adventurer</p>
+    }
+    else
+    {
+        <div class="card-container">
+
+            @foreach(var character in Model)
+            {
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">@character.Name</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@character.Level</h6>
+                        @* <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> *@
+                        <a class="card-link" asp-controller="Character" asp-action="Detail">Character Details</a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    <a class="btn btn-primary" asp-controller="Character" asp-action="Create">Create New Character</a>
+</div>

@@ -14,6 +14,7 @@ using CharacterBuilder.Models.Character;
 
 namespace CharacterBuilder.MVC.Controllers
 {
+    [Authorize]
     public class CharacterController : Controller
     {
         private readonly ILogger<CharacterController> _logger;
@@ -26,7 +27,6 @@ namespace CharacterBuilder.MVC.Controllers
             _characterService = characterService;
             _userManager = userManager;
         }
-        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -40,7 +40,6 @@ namespace CharacterBuilder.MVC.Controllers
             var characters = await _characterService.GetAllCharactersByOwnerId(userId);
             return View(characters);
         }
-
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -49,7 +48,7 @@ namespace CharacterBuilder.MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CharacterCreate model)
         {
-            return View();
+            return RedirectToAction(nameof(Index));
         }
 
         // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
