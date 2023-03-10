@@ -37,7 +37,7 @@ namespace CharacterBuilder.Services.Character
                 ResilienceScore = model.ResilienceScore,
                 SoulScore = model.SoulScore,
                 MovementScore = model.MovementScore,
-                WeaponProficiencies = model.WeaponProficiencies
+                WeaponProficiencies = (model.WeaponProficiencies == null) ? "" : model.WeaponProficiencies
             };
             _dbContext.Characters.Add(newCharacter);
             return await _dbContext.SaveChangesAsync() > 0;

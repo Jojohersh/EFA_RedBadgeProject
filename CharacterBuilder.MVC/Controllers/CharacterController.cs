@@ -35,7 +35,10 @@ namespace CharacterBuilder.MVC.Controllers
             var validId = int.TryParse( _userManager.GetUserId(currentUser), out userId);
             
             if (!validId)
-                return View("Error!");
+            {
+                ViewBag["ErrorMsg"] = "Invalid user ID";
+                return RedirectToAction(nameof(Error));
+            }
                 
             var characters = await _characterService.GetAllCharactersByOwnerId(userId);
             return View(characters);
@@ -48,13 +51,28 @@ namespace CharacterBuilder.MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CharacterCreate model)
         {
+            if (!ModelState.IsValid)
+            {
+                ViewData["ErrorMsg"] = "Invalid data entered";
+                return View(model);
+            }
+            
+            var currentUser = this.User;
+            var userId = 0;
+            var validId = int.TryParse(_userManager.GetUserId(currentUser), out userId);
+            if (!validId)
+            {
+                ViewData["ErrorMsg"] = "Invalid user ID. Character not created.";
+                return View(model);
+            }
+            var characterCreated = await _characterService.CreateCharacterAsync(model, userId);
             return RedirectToAction(nameof(Index));
         }
 
-        // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        // public IActionResult Error()
-        // {
-        //     return View("Error!");
-        // }
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View("Error!");
+        }
     }
 }

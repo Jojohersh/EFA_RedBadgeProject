@@ -19,6 +19,6 @@ namespace CharacterBuilder.Models.Character
         public int ResilienceScore {get; set;}=1;
         public int SoulScore {get; set;}=1;
         public int MovementScore {get; set;}=2;
-        public string WeaponProficiencies {get; set;}="";
+        public string? WeaponProficiencies {get; set;}="";
     }
 }
