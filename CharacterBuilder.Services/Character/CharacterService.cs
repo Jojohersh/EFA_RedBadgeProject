@@ -85,7 +85,7 @@ namespace CharacterBuilder.Services.Character
                     //todo: Items = _inventoryService.GetItemsByCharacterId(Id),
                     //todo: Weapons = _inventoryService.GetWeaponsByCharacterId(Id)
                 })
-                .SingleAsync();
+                .FirstOrDefaultAsync();
                 return character;
         }
         public async Task<bool> UpdateCharacterAsync(CharacterEdit model)

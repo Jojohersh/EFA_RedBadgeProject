@@ -1,0 +1,89 @@
+@model CharacterBuilder.Models.Character.CharacterDetail
+
+@{
+    ViewData["Title"] = $"Details - {@Model.Name}";
+}
+
+@if (ViewData["ErrorMsg"] is not null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewData["ErrorMsg"]
+    </div>
+}
+<div class="container col-8">
+    <form asp-action="Edit">
+        <div class="d-flex gap-2 pb-4">
+            <div class="form-group flex-fill">
+                @Html.DisplayNameFor(c => c.Name)
+                @Html.TextBoxFor(c => c.Name, new {Class="form-control"})
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(c => c.Level)
+                @Html.TextBoxFor(c => c.Level, new {type="number", Class="form-control"})
+                <span asp-validation-for="Level"></span>
+            </div>
+        </div>
+        
+    @if (Model.CampaignId is not null && Model.CampaignName is not null)
+    {
+        <div class="form-group pb-2">
+            @Html.DisplayNameFor(c => c.CampaignName)
+            @Html.DisplayTextFor(c => c.CampaignName)
+        </div>
+    }
+        <div class="d-flex flex-row justify-content-evenly pb-2">
+            <div class="form-group flex-col">
+                @Html.DisplayNameFor(c => c.Height)
+                @Html.TextBoxFor(c => c.Height, new {Class="form-control flex-grow-1"})
+                <span asp-validation-for="Height"></span>
+            </div>
+            <div class="form-group flex-col">
+                @Html.DisplayNameFor(c => c.Weight)
+                @Html.TextBoxFor(c => c.Weight, new {Class="form-control flex-grow-1"})
+                <span asp-validation-for="Weight"></span>
+            </div>
+            <div class="form-group flex-col">
+                @Html.DisplayNameFor(c => c.Age)
+                @Html.TextBoxFor(c => c.Age, new {Class="form-control flex-grow-1"})
+                <span asp-validation-for="Age"></span>
+            </div>
+        </div>
+        <div class="d-flex justify-content-evenly pb-4">
+            <div class="form-group">
+                @Html.DisplayNameFor(c=>c.MindScore)
+                @Html.TextBoxFor(c=>c.MindScore, new {type="number",Class="form-control"})
+                <span asp-validation-for="MindScore"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(c => c.BodyScore)
+                @Html.TextBoxFor(c => c.BodyScore, new {type="number",Class="form-control"})
+                <span asp-validation-for="BodyScore"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(c => c.ResilienceScore)
+                @Html.TextBoxFor(c => c.ResilienceScore, new {type="number",Class="form-control"})
+                <span asp-validation-for="ResilienceScore"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(c => c.SoulScore)
+                @Html.TextBoxFor(c => c.SoulScore, new {type="number",Class="form-control"})
+                <span asp-validation-for="SoulScore"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(c => c.MovementScore)
+                @Html.TextBoxFor(c => c.MovementScore, new {type="number",Class="form-control"})
+                <span asp-validation-for="MovementScore"></span>
+            </div>
+        </div>
+
+        <div class="form-group pb-2">
+            @Html.DisplayNameFor(c => c.WeaponProficiencies)
+            @Html.TextAreaFor(c => c.WeaponProficiencies, new {rows="10",Class="form-control"})
+            <span asp-validation-for="WeaponProficiencies"></span>
+        </div>
+        <div class="form-group h-auto">
+            <input class="btn btn-primary" type="submit" value="Update Character">
+        </div>
+    </form>
+</div>

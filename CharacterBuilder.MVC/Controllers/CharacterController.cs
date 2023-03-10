@@ -27,6 +27,7 @@ namespace CharacterBuilder.MVC.Controllers
             _characterService = characterService;
             _userManager = userManager;
         }
+
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -43,6 +44,7 @@ namespace CharacterBuilder.MVC.Controllers
             var characters = await _characterService.GetAllCharactersByOwnerId(userId);
             return View(characters);
         }
+        
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -67,6 +69,17 @@ namespace CharacterBuilder.MVC.Controllers
             }
             var characterCreated = await _characterService.CreateCharacterAsync(model, userId);
             return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Detail([FromRoute]int id)
+        {
+            var character = await _characterService.GetCharacterById(id);
+            if (character is null)
+            {
+                ViewData["ErrorMsg"] = "Invalid character ID";
+                return RedirectToAction(nameof(Index));
+            }
+            return View(character);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
