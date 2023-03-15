@@ -5,6 +5,12 @@
 }
 
 <div class="container-fluid">
+    @if (ViewData["ErrorMsg"] is not null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @ViewData["ErrorMsg"]
+        </div>
+    }
     <h1>Your Characters</h1>
     @if (Model.Count() == 0)
     {

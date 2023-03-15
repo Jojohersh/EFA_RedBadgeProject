@@ -9,7 +9,8 @@ namespace CharacterBuilder.Models.Character
     public class CharacterDetail
     {
         public int Id {get; set;}
-        public string OwnerName {get; set;}
+        public int? OwnerId {get; set;}
+        public string? OwnerName {get; set;}
         public int? CampaignId {get; set;}
         public string? CampaignName {get; set;}
 
@@ -31,7 +32,7 @@ namespace CharacterBuilder.Models.Character
         public int CurrentTalentPoints {get; set;}
         public int CurrentMovementPoints {get; set;}
         public string WeaponProficiencies {get; set;}
-        public List<InventorySlotListItem> Items {get; set;}
-        public List<InventorySlotListItem> Weapons {get; set;}
+        public List<InventorySlotListItem>? Items {get; set;}
+        public List<InventorySlotListItem>? Weapons {get; set;}
     }
 }

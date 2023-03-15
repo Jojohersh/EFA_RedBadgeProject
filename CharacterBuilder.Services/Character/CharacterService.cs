@@ -66,6 +66,7 @@ namespace CharacterBuilder.Services.Character
                 .Where(c => c.Id == Id)
                 .Select(c => new CharacterDetail {
                     Id = c.Id,
+                    OwnerId = c.OwnerId,
                     OwnerName = (c.Owner != null)? c.Owner.UserName : "No current owner",
                     CampaignId = c.CampaignId,
                     CampaignName = (c.Campaign != null)? c.Campaign.Name : "Not in a campaign",
@@ -83,7 +84,9 @@ namespace CharacterBuilder.Services.Character
                     CurrentTalentPoints = c.CurrentTalentPoints,
                     WeaponProficiencies = c.WeaponProficiencies,
                     //todo: Items = _inventoryService.GetItemsByCharacterId(Id),
+                    Items = new List<Models.CharacterInventorySlot.InventorySlotListItem>(),
                     //todo: Weapons = _inventoryService.GetWeaponsByCharacterId(Id)
+                    Weapons = new List<Models.CharacterInventorySlot.InventorySlotListItem>()
                 })
                 .FirstOrDefaultAsync();
                 return character;
