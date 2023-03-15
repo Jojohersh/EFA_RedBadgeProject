@@ -56,7 +56,8 @@ namespace CharacterBuilder.Services.Item
             return await _dbContext.Items
                         .Select(item => new ItemListItem {
                             Id = item.Id,
-                            Name = item.Name
+                            Name = item.Name,
+                            Description = item.Description
                         }).ToListAsync();
         }
 
