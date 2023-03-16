@@ -4,12 +4,6 @@
     ViewData["Title"] = $"Details - {@Model.Name}";
 }
 
-@if (ViewData["ErrorMsg"] is not null)
-{
-    <div class="alert alert-danger" role="alert">
-        @ViewData["ErrorMsg"]
-    </div>
-}
 <div class="container col-8">
     <form asp-action="Update">
         <div class="d-flex gap-2 pb-4">

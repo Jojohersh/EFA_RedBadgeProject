@@ -9,13 +9,21 @@
         <thead>
             <th>Item Name</th>
             <th>Description</th>
+            <th></th>
         </thead>
         <tbody>
-            @foreach(var item in Model)
+            @{
+                var sortedItems = Model.OrderBy(item => item.Name).ToList();
+            }
+            @foreach(var item in sortedItems)
             {
                 <tr>
                     <td>@item.Name</td>
                     <td>@item.Description</td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Update" asp-controller="Item" asp-route-id="@item.Id">Edit</a>
+                        <a class="btn btn-danger" asp-action="ConfirmDelete" asp-controller="Item" asp-route-id="@item.Id">Delete</a>
+                    </td>
                 </tr>
             }
         </tbody>

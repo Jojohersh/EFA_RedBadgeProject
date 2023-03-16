@@ -37,7 +37,7 @@ namespace CharacterBuilder.MVC.Controllers
             if (!ModelState.IsValid)
             {
                 ViewData["ErrorMsg"] = "Invalid data to create item";
-                return RedirectToAction(nameof(Index));
+                return View(model);
             }
             var currentUser = await _userManager.GetUserAsync(User);
             if (currentUser is null)
@@ -55,6 +55,63 @@ namespace CharacterBuilder.MVC.Controllers
         {
             var allItems = await _itemService.GetAllItemsAsync();
             return View(allItems);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Update([FromRoute]int id)
+        {
+            var itemToUpdate = await _itemService.GetItemByIdAsync(id);
+            if (itemToUpdate is null)
+                return RedirectToAction(nameof(Index));
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser is null || itemToUpdate.CreatorId != currentUser.Id)
+            {
+                ViewData["ErrorMsg"] = "Unauthorized edit attempt. You shall not pass.";
+                return RedirectToAction(nameof(Index));
+            }
+            var itemEditModel = new ItemEdit {
+                Id = itemToUpdate.Id,
+                Name = itemToUpdate.Name,
+                Description = itemToUpdate.Description,
+                CreatorId = itemToUpdate.CreatorId
+            };
+            return View(itemEditModel);
+        }
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Update(ItemEdit model)
+        {
+            var updatedSuccess = await _itemService.UpdateItemAsync(model);
+            if (!updatedSuccess)
+                ViewData["ErrorMsg"] = "could not update item";
+
+            return RedirectToAction(nameof(Index));
+        }
+        [Authorize]
+        public async Task<IActionResult> ConfirmDelete([FromRoute] int id)
+        {
+            var itemToDelete = await _itemService.GetItemByIdAsync(id);
+            if (itemToDelete is null)
+            {
+                ViewData["ErrorMsg"] = "Invalid item request";
+                return RedirectToAction(nameof(Index));
+            }
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser is null || itemToDelete.CreatorId != currentUser.Id)
+            {
+                ViewData["ErrorMsg"] = "Unauthorized delete attempt. You shall not pass.";
+                return RedirectToAction(nameof(Index)); 
+            }
+            return View(itemToDelete);
+        }
+        public async Task<IActionResult> Delete([FromRoute] int id)
+        {
+            var deleteSuccess = await _itemService.DeleteItemAsync(id);
+            if (!deleteSuccess)
+            {
+                ViewData["ErrorMsg"] = "Item could not be deleted";
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

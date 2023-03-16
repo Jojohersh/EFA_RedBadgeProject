@@ -4,12 +4,6 @@
     ViewData["Title"] = "Create a Character";
 }
 
-@if (ViewData["ErrorMsg"] is not null)
-{
-    <div class="alert alert-danger" role="alert">
-        @ViewData["ErrorMsg"]
-    </div>
-}
 <div class="container">
     <form asp-action="Create">
         <div class="form-group">

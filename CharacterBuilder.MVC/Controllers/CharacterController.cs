@@ -138,7 +138,6 @@ namespace CharacterBuilder.MVC.Controllers
             if (!deleteSuccess)
             {
                 ViewData["ErrorMsg"] = "Character could not be deleted";
-                return RedirectToAction(nameof(Index));
             }
             return RedirectToAction(nameof(Index));
         }

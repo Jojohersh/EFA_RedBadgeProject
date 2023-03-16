@@ -1,0 +1,25 @@
+@model CharacterBuilder.Models.Item.ItemEdit
+
+@{
+    ViewData["Title"] = $"Edit {Model.Name}";
+}
+
+<div class="container-fluid">
+    <form asp-action="Update">
+        <div class="form-group">
+            @Html.HiddenFor(item => item.Id)
+            @Html.HiddenFor(item => item.CreatorId)
+        </div>
+        <div class="form-group col-md-4">
+            @Html.DisplayNameFor(item => item.Name);
+            @Html.TextBoxFor(item => item.Name, new {Class="form-control"})
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group col-md-8">
+            @Html.DisplayNameFor(item => item.Description)
+            @Html.TextAreaFor(item => item.Description, new {Class="form-control", Rows="4"})
+            <span asp-validation-for="Description"></span>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Update Item">
+    </form>
+</div>

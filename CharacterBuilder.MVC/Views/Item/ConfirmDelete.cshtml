@@ -1,7 +1,7 @@
-@model CharacterBuilder.Models.Character.CharacterDetail
+@model CharacterBuilder.Models.Item.ItemDetail
 
 @{
-    ViewData["Title"] = $"Details - {@Model.Name}";
+    ViewData["Title"] = $"Delete {Model.Name}?";
 }
 
 <div class="container col-8">
@@ -10,5 +10,5 @@
         This cannot be undone.
     </div>
     @Html.ActionLink("Delete","Delete",new {id = Model.Id}, new {Class="btn btn-danger"})
-    @Html.ActionLink("Get me out of here!", "Detail", new {id = @Model.Id})
+    @Html.ActionLink("Get me out of here!", "Index", new {id = @Model.Id})
 </div>

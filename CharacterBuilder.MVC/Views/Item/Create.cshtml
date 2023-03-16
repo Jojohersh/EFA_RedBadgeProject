@@ -9,10 +9,12 @@
         <div class="form-group col-md-4">
             @Html.DisplayNameFor(i => i.Name)
             @Html.TextBoxFor(i => i.Name, new {Class="form-control"})
+            <span asp-validation-for="Name"></span>
         </div>
         <div class="form-group col-md-8">
             @Html.DisplayNameFor(i => i.Description)
             @Html.TextAreaFor(i => i.Description, new {Class="form-control", Rows="4"})
+            <span asp-validation-for="Description"></span>
         </div>
         <div class="form-group">
             <input class="btn btn-primary" type="submit" value="Create Item">
