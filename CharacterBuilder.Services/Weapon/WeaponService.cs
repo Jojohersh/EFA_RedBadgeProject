@@ -75,9 +75,10 @@ namespace CharacterBuilder.Services.Weapon
                     AttackingStat = w.AttackingStat,
                     TargetStat = w.TargetStat,
                     IsTwoHanded = w.IsTwoHanded,
+                    CreatorId = w.CreatedBy.Id,
                     CreatedByUserName = w.CreatedBy.UserName
                 })
-                .SingleAsync();
+                .FirstOrDefaultAsync(w => w.Id == id);
         }
 
         public async Task<bool> UpdateWeaponAsync(WeaponEdit model, int editorId)

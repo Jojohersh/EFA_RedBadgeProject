@@ -1,0 +1,41 @@
+@model List<CharacterBuilder.Models.Weapon.WeaponListItem>
+
+@{
+    ViewData["Title"] = "All weapons";
+}
+
+<div class="container-fluid">
+    <table class="table">
+        <thead>
+            <th>Name</th>
+            <th>Low attack range</th>
+            <th>High attack range</th>
+            <th>Low Thrown range</th>
+            <th>High Thrown range</th>
+            <th>Attacking Stat</th>
+            <th>Target Stat</th>
+            <th>Is Two Handed</th>
+            <th></th>
+        </thead>
+        <tbody>
+            @foreach(var weapon in Model)
+            {
+                <tr>
+                    <td>@weapon.Name</td>
+                    <td>@weapon.LowAttackRange</td>
+                    <td>@(weapon.HighAttackRange==null? "n/a" : weapon.HighAttackRange)</td>
+                    <td>@(weapon.LowThrownRange==null? "n/a" : weapon.LowThrownRange)</td>
+                    <td>@(weapon.HighThrownRange==null? "n/a" : weapon.HighThrownRange)</td>
+                    <td>@weapon.AttackingStat</td>
+                    <td>@weapon.TargetStat</td>
+                    <td>@weapon.IsTwoHanded</td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Update" asp-controller="Weapon" asp-route-id="@weapon.Id">Edit</a>
+                        <a class="btn btn-danger" asp-action="ConfirmDelete" asp-controller="Weapon" asp-route-id="@weapon.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a class="btn btn-primary" asp-action="Create" asp-controller="Weapon">Create a weapon</a>
+</div>

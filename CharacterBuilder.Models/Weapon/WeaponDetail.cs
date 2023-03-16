@@ -16,6 +16,7 @@ namespace CharacterBuilder.Models.Weapon
         public string AttackingStat {get; set;}
         public string TargetStat {get; set;}
         public bool IsTwoHanded {get; set;}
+        public int CreatorId {get; set;}
         public string CreatedByUserName {get; set;}
     }
 }
