@@ -95,16 +95,16 @@
 
         <div class="form-group pb-2">
             @Html.DisplayNameFor(c => c.WeaponProficiencies)
-            @Html.TextAreaFor(c => c.WeaponProficiencies, new {rows="10",Class="form-control"})
+            @Html.TextAreaFor(c => c.WeaponProficiencies, new {rows="6",Class="form-control"})
             <span asp-validation-for="WeaponProficiencies"></span>
         </div>
         <div class="form-group h-auto">
-            <input class="btn btn-primary" type="submit" value="Update Character">
+            <input class="btn btn-primary" type="submit" value="Update Character Stats">
         </div>
     </form>
     <div class="container-fluid">
         <h2>Weapons</h2>
-        <table class="table pb-4">
+        <table class="table table-striped pb-4">
             <thead>
                 <th>Name</th>
                 <th>Low attack range</th>
@@ -146,12 +146,12 @@
         </table>
         
         
-        <form class="row g-3 pb-4" id="WeaponAddForm" asp-controller="InventorySlot" asp-action="Create">
+        <form class="row g-3 pb-5 d-flex justify-content-end" id="WeaponAddForm" asp-controller="InventorySlot" asp-action="Create">
             @Html.Hidden("CharacterId", Model.Id)
-            <div class="form-group row">
+            <div class="col-8 form-group row">
                 <div class="col-6">
                     <label>Add a weapon: </label>
-                    <select class="form-select" name="WeaponId">
+                    <select class="form-select form-select-sm" name="WeaponId">
                     @foreach(var weapon in ViewBag.AllWeapons)
                     {
                         <option value="@weapon.Id">
@@ -162,10 +162,10 @@
                 </div>
                 <div class="col-3">
                     <label for="ItemCount">Item Count</label>
-                    <input type="number" name="ItemCount" class="form-control col-1">
+                    <input type="number" name="ItemCount" value="1" class="form-control form-control-sm">
                 </div>
                 <div class="col-3 d-flex flex-col">
-                    <input type="submit" value="Add weapon" class="btn btn-outline-primary align-self-end">
+                    <input type="submit" value="Add weapon" class="btn btn-outline-primary btn-sm align-self-end">
                 </div>
             </div>
         </form>
