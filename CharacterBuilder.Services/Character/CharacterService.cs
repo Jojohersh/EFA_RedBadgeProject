@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CharacterBuilder.Data;
 using CharacterBuilder.Data.Entities;
 using CharacterBuilder.Models.Character;
+using CharacterBuilder.Services.InventorySlots;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,11 +15,13 @@ namespace CharacterBuilder.Services.Character
     {
         private readonly UserManager<IdentityUser<int>> _userManager;
         private readonly ApplicationDbContext _dbContext;
+        private readonly IInventorySlotsService _inventoryService;
 
-        public CharacterService(UserManager<IdentityUser<int>> userManager, ApplicationDbContext dbContext)
+        public CharacterService(UserManager<IdentityUser<int>> userManager, IInventorySlotsService inventoryService, ApplicationDbContext dbContext)
         {
             _userManager = userManager;
             _dbContext = dbContext;
+            _inventoryService = inventoryService;
         }
 
         public async Task<bool> CreateCharacterAsync(CharacterCreate model, int ownerId)
@@ -82,14 +85,14 @@ namespace CharacterBuilder.Services.Character
                     MovementScore = c.MovementScore,
                     CurrentHp = c.CurrentHp,
                     CurrentTalentPoints = c.CurrentTalentPoints,
-                    WeaponProficiencies = c.WeaponProficiencies,
-                    //todo: Items = _inventoryService.GetItemsByCharacterId(Id),
-                    Items = new List<Models.CharacterInventorySlot.InventorySlotListItem>(),
-                    //todo: Weapons = _inventoryService.GetWeaponsByCharacterId(Id)
-                    Weapons = new List<Models.CharacterInventorySlot.InventorySlotListItem>()
+                    WeaponProficiencies = c.WeaponProficiencies
                 })
                 .FirstOrDefaultAsync();
-                return character;
+            if (character is null)
+                return null;
+            character.Items = await _inventoryService.GetAllItemSlotsAsync(Id);
+            character.Weapons = await _inventoryService.GetAllWeaponSlotsAsync(Id);
+            return character;
         }
         public async Task<bool> UpdateCharacterAsync(CharacterEdit model)
         {

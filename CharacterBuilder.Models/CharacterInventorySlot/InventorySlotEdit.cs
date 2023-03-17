@@ -11,6 +11,8 @@ namespace CharacterBuilder.Models.CharacterInventorySlot
         [Required]
         public int Id {get; set;}
         [Required]
+        public int CharacterId {get; set;}
+        [Required]
         public int ItemCount {get; set;}
     }
 }

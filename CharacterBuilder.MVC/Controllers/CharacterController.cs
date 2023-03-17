@@ -11,6 +11,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
 using CharacterBuilder.Models.Character;
+using CharacterBuilder.Services.InventorySlots;
+using CharacterBuilder.Services.Item;
+using CharacterBuilder.Services.Weapon;
 
 namespace CharacterBuilder.MVC.Controllers
 {
@@ -20,12 +23,16 @@ namespace CharacterBuilder.MVC.Controllers
         private readonly ILogger<CharacterController> _logger;
         private readonly ICharacterService _characterService;
         private readonly UserManager<IdentityUser<int>> _userManager;
+        private readonly IItemService _itemService;
+        private readonly IWeaponService _weaponService;
 
-        public CharacterController(ICharacterService characterService, ILogger<CharacterController> logger, UserManager<IdentityUser<int>> userManager)
+        public CharacterController(ILogger<CharacterController> logger, ICharacterService characterService, UserManager<IdentityUser<int>> userManager, IItemService itemService, IWeaponService weaponService)
         {
             _logger = logger;
             _characterService = characterService;
             _userManager = userManager;
+            _itemService = itemService;
+            _weaponService = weaponService;
         }
 
         [HttpGet]
@@ -79,6 +86,9 @@ namespace CharacterBuilder.MVC.Controllers
                 ViewData["ErrorMsg"] = "Invalid character ID";
                 return RedirectToAction(nameof(Index));
             }
+            ViewBag.AllItems = await _itemService.GetAllItemsAsync();
+            ViewBag.AllWeapons = await _weaponService.GetAllWeaponsAsync();
+            
             return View(character);
         }
 
@@ -96,11 +106,12 @@ namespace CharacterBuilder.MVC.Controllers
                 ViewData["ErrorMsg"] = "Character does not exist";
                 return RedirectToAction(nameof(Index));
             } 
-            // if(existingCharacter.OwnerName != currentUser.UserName)
-            // {
-            //     ViewData["ErrorMsg"] = "Unauthorized access of character";
-            //     return RedirectToAction(nameof(Index));
-            // }
+            if(existingCharacter.OwnerName != currentUser.UserName)
+            {
+                ViewData["ErrorMsg"] = "Unauthorized access of character";
+                return RedirectToAction(nameof(Index));
+            }
+
             var updateModel = new CharacterEdit {
                 Id = model.Id,
                 CampaignId = model.CampaignId,

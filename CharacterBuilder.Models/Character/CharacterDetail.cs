@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CharacterBuilder.Models.CharacterInventorySlot;
+using CharacterBuilder.Models.Item;
+using CharacterBuilder.Models.Weapon;
 
 namespace CharacterBuilder.Models.Character
 {
@@ -32,7 +34,7 @@ namespace CharacterBuilder.Models.Character
         public int CurrentTalentPoints {get; set;}
         public int CurrentMovementPoints {get; set;}
         public string WeaponProficiencies {get; set;}
-        public List<InventorySlotListItem>? Items {get; set;}
-        public List<InventorySlotListItem>? Weapons {get; set;}
+        public List<ItemSlotListItem>? Items {get; set;}
+        public List<WeaponSlotListItem>? Weapons {get; set;}
     }
 }

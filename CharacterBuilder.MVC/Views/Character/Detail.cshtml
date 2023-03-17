@@ -2,14 +2,15 @@
 
 @{
     ViewData["Title"] = $"Details - {@Model.Name}";
+    ViewData["CharacterID"] = Model.Id;
 }
 
-<div class="container col-8">
-    <form asp-action="Update">
+<div class="container col-10">
+    <form class="pb-3" asp-action="Update">
         <div class="d-flex gap-2 pb-4">
             <div class="form-group flex-fill">
                 @Html.DisplayNameFor(c => c.Name)
-                @Html.TextBoxFor(c => c.Name, new {Class="form-control"})
+                @Html.TextBoxFor(c => c.Name, new {Class="form-control-lg"})
                 <span asp-validation-for="Name"></span>
             </div>
             <div class="form-group flex-fill">
@@ -101,5 +102,73 @@
             <input class="btn btn-primary" type="submit" value="Update Character">
         </div>
     </form>
-            @Html.ActionLink("Delete","ConfirmDelete",new {id = Model.Id}, new {Class="btn btn-danger"})
+    <div class="container-fluid">
+        <h2>Weapons</h2>
+        <table class="table pb-4">
+            <thead>
+                <th>Name</th>
+                <th>Low attack range</th>
+                <th>High attack range</th>
+                <th>Low Thrown range</th>
+                <th>High Thrown range</th>
+                <th>Attacking Stat</th>
+                <th>Target Stat</th>
+                <th>Is Two Handed</th>
+                <th>Item Count</th>
+                <th></th>
+            </thead>
+            <tbody>
+                @foreach(var weapon in Model.Weapons)
+                {
+                    <tr>
+                        <td>@weapon.Name</td>
+                        <td>@weapon.LowAttackRange</td>
+                        <td>@(weapon.HighAttackRange==null? "n/a" : weapon.HighAttackRange)</td>
+                        <td>@(weapon.LowThrownRange==null? "n/a" : weapon.LowThrownRange)</td>
+                        <td>@(weapon.HighThrownRange==null? "n/a" : weapon.HighThrownRange)</td>
+                        <td>@weapon.AttackingStat</td>
+                        <td>@weapon.TargetStat</td>
+                        <td>@weapon.IsTwoHanded</td>
+                        <td>
+                            <form asp-controller="InventorySlot" asp-action="Update" asp-route-id="">
+                                @Html.Hidden("Id",@weapon.SlotId)
+                                @Html.Hidden("CharacterId",Model.Id)
+                                <input class="col-2 form-control" name="ItemCount" type="number" value="@weapon.ItemCount">
+                                <input class="btn btn-primary btn-sm" type="submit" value="Save Changes">
+                            </form>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" asp-action="Delete" asp-controller="InventorySlot" asp-route-id="@weapon.SlotId" asp-route-characterId="@Model.Id">Remove</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        
+        
+        <form class="row g-3 pb-4" id="WeaponAddForm" asp-controller="InventorySlot" asp-action="Create">
+            @Html.Hidden("CharacterId", Model.Id)
+            <div class="form-group row">
+                <div class="col-6">
+                    <label>Add a weapon: </label>
+                    <select class="form-select" name="WeaponId">
+                    @foreach(var weapon in ViewBag.AllWeapons)
+                    {
+                        <option value="@weapon.Id">
+                            @weapon.Name
+                        </option>
+                    }
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label for="ItemCount">Item Count</label>
+                    <input type="number" name="ItemCount" class="form-control col-1">
+                </div>
+                <div class="col-3 d-flex flex-col">
+                    <input type="submit" value="Add weapon" class="btn btn-outline-primary align-self-end">
+                </div>
+            </div>
+        </form>
+    </div>
+    @Html.ActionLink($"Delete {@Model.Name}","ConfirmDelete",new {id = Model.Id}, new {Class="btn btn-danger"})
 </div>
