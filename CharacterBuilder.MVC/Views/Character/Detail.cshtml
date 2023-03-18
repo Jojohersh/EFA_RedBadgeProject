@@ -130,8 +130,8 @@
                         <td>@weapon.TargetStat</td>
                         <td>@weapon.IsTwoHanded</td>
                         <td>
-                            <form asp-controller="InventorySlot" asp-action="Update" asp-route-id="">
-                                @Html.Hidden("Id",@weapon.SlotId)
+                            <form asp-controller="InventorySlot" asp-action="Update">
+                                @Html.Hidden("SlotId",@weapon.SlotId)
                                 @Html.Hidden("CharacterId",Model.Id)
                                 <input class="col-2 form-control" name="ItemCount" type="number" value="@weapon.ItemCount">
                                 <input class="btn btn-primary btn-sm" type="submit" value="Save Changes">
@@ -160,12 +160,61 @@
                     }
                     </select>
                 </div>
-                <div class="col-3">
+                <div class="form-group col-3">
                     <label for="ItemCount">Item Count</label>
                     <input type="number" name="ItemCount" value="1" class="form-control form-control-sm">
                 </div>
                 <div class="col-3 d-flex flex-col">
                     <input type="submit" value="Add weapon" class="btn btn-outline-primary btn-sm align-self-end">
+                </div>
+            </div>
+        </form>
+        <h2>Items</h2>
+        <table class="table table-striped pb-3">
+            <thead>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Item Count</th>
+            </thead>
+            <tbody>
+                @foreach(var item in Model.Items)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Description</td>
+                        <td>
+                            <form asp-controller="InventorySlot" asp-action="Update">
+                                @Html.Hidden("SlotId",@item.SlotId)
+                                @Html.Hidden("CharacterId",Model.Id)
+                                <input class="col-2 form-control" name="ItemCount" type="number" value="@item.ItemCount">
+                                <input class="btn btn-primary btn-sm" type="submit" value="Save Changes">
+                            </form>
+                        </td>
+                        <td><a class="btn btn-danger" asp-action="Delete" asp-controller="InventorySlot" asp-route-id="@item.SlotId" asp-route-characterId="@Model.Id">Remove</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <form class="row g-3 pb-5 d-flex justify-content-end" id="ItemAddForm" asp-controller="InventorySlot" asp-action="Create">
+            @Html.Hidden("CharacterId", Model.Id)
+            <div class="col-8 form-group row">
+                <div class="col-6">
+                    <label>Add an item: </label>
+                    <select class="form-select form-select-sm" name="ItemId">
+                    @foreach(var item in ViewBag.AllItems)
+                    {
+                        <option value="@item.Id">
+                            @item.Name
+                        </option>
+                    }
+                    </select>
+                </div>
+                <div class="form-group col-3">
+                    <label for="ItemCount">Item Count</label>
+                    <input type="number" name="ItemCount" value="1" class="form-control form-control-sm">
+                </div>
+                <div class="col-3 d-flex flex-col">
+                    <input type="submit" value="Add item" class="btn btn-outline-primary btn-sm align-self-end">
                 </div>
             </div>
         </form>

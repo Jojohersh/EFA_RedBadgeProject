@@ -70,6 +70,7 @@ namespace CharacterBuilder.Services.InventorySlots
                 .Include(slot => slot.Item)
                 .Where(slot => slot.Character.Id == characterId && slot.Weapon == null)
                 .Select(slot => new ItemSlotListItem {
+                    SlotId = slot.Id,
                     Name = slot.Item.Name,
                     Description = slot.Item.Description,
                     ItemCount = slot.ItemCount
@@ -100,7 +101,7 @@ namespace CharacterBuilder.Services.InventorySlots
 
         public async Task<bool> UpdateInventorySlotAsync(InventorySlotEdit model)
         {
-            var slotToUpdate = await _dbContext.InventorySlots.FindAsync(model.Id);
+            var slotToUpdate = await _dbContext.InventorySlots.FindAsync(model.SlotId);
             if (slotToUpdate is null || model.ItemCount < 0)
                 return false;
                 
