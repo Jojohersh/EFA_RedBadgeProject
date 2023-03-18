@@ -8,6 +8,7 @@ using CharacterBuilder.Models.Character;
 using CharacterBuilder.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using CharacterBuilder.Models.CampaignPlayer;
 
 namespace CharacterBuilder.Services.Campaign
 {
@@ -50,19 +51,31 @@ namespace CharacterBuilder.Services.Campaign
             return await _dbContext.SaveChangesAsync() > 0;
         }
 
-        public async Task<List<CampaignListItem>> GetAllCampaignsAsync()
+        public async Task<List<CampaignListItem>> GetAllCampaignsByPlayerIdAsync(int id)
         {
-            var campaigns = await _dbContext.Campaigns
-                .Include(c => c.GameMaster)
+            List<CampaignListItem> campaigns = await _dbContext.CampaignPlayers
+                .Include(cp => cp.Campaign)
+                .ThenInclude(c => c.GameMaster)
+                .Where(cp => cp.PlayerId == id)
                 .Select( c => new CampaignListItem {
+                    Id = c.Campaign.Id,
+                    Name = c.Campaign.Name,
+                    GameMasterName = c.Campaign.GameMaster.UserName
+                }).ToListAsync();
+                
+            List<CampaignListItem> campaignsAsGM = await _dbContext.Campaigns
+                .Include(c => c.GameMaster)
+                .Where(c => c.GameMasterId == id)
+                .Select(c => new CampaignListItem{
                     Id = c.Id,
                     Name = c.Name,
                     GameMasterName = c.GameMaster.UserName
                 }).ToListAsync();
-            return campaigns;
+
+            return campaigns.Concat(campaignsAsGM).ToList();
         }
 
-        public async Task<CampaignDetail> GetCampaignById(int id)
+        public async Task<CampaignDetail> GetCampaignByIdAsync(int id)
         {
             var existingCampaign = await _dbContext.Campaigns
                 .Include(c=>c.GameMaster)
@@ -73,6 +86,7 @@ namespace CharacterBuilder.Services.Campaign
                 return null;
 
             return new CampaignDetail {
+                Id = existingCampaign.Id,
                 Name = existingCampaign.Name,
                 GameMasterName = existingCampaign.GameMaster.UserName,
                 Description = existingCampaign.Description,
@@ -80,7 +94,10 @@ namespace CharacterBuilder.Services.Campaign
                 Players = await _dbContext.CampaignPlayers
                     .Include(cp => cp.Player)
                     .Where(cp => cp.CampaignId == existingCampaign.Id)
-                    .Select(cp => cp.Player.UserName)
+                    .Select(cp => new CampaignPlayerListItem {
+                        Id=id,
+                        UserName = cp.Player.UserName
+                    })
                     .ToListAsync(),
                 Characters = await GetAllCharactersByCampaignIdAsync(existingCampaign.Id)
             };

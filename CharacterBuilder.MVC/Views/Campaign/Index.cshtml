@@ -1,0 +1,30 @@
+@model List<CharacterBuilder.Models.Campaign.CampaignListItem>
+
+@{
+    ViewData["Title"] = "Your campaigns";
+}
+<div class="container-fluid">
+    @if (Model.Count() == 0)
+    {
+        <h2>You do not have any campaigns</h2>
+        <p>Click the button below to create a new campaign</p>
+    }
+    else
+    {
+        <div class="d-flex flex-md-row flex-wrap gap-2 pb-2 pt-2">
+    
+            @foreach(var campaign in Model)
+            {
+                <div class="card flex-grow-1 flex-md-grow-0" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">@campaign.Name</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Game Master: @campaign.GameMasterName</h6>
+                        <a class="card-link" asp-controller="Campaign" asp-action="Detail" asp-route-id="@campaign.Id">Campaign Details</a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    <a class="btn btn-primary" asp-controller="Campaign" asp-action="Create">Create New Campaign</a>
+</div>
+

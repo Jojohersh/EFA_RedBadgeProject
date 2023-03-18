@@ -9,8 +9,8 @@ namespace CharacterBuilder.Services.Campaign
     public interface ICampaignService
     {
         Task<bool> CreateCampaignAsync(CampaignCreate model, int GameMasterId);
-        Task<List<CampaignListItem>> GetAllCampaignsAsync();
-        Task<CampaignDetail> GetCampaignById(int id);
+        Task<List<CampaignListItem>> GetAllCampaignsByPlayerIdAsync(int playerId);
+        Task<CampaignDetail> GetCampaignByIdAsync(int id);
         Task<bool> UpdateCampaignAsync(CampaignEdit model);
         Task<bool> DeleteCampaignAsync(int id);
     }

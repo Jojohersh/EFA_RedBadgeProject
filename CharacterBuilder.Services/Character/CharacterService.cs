@@ -60,6 +60,20 @@ namespace CharacterBuilder.Services.Character
                 .ToListAsync();
             return characters;
         }
+        public async Task<List<CharacterListItem>> GetAllUnusedCharactersByOwnerId(int Id)
+        {
+            var characters = await _dbContext.Characters
+                .Include(c => c.Owner)
+                .Where(c => c.OwnerId == Id && c.CampaignId == null)
+                .Select(c => new CharacterListItem {
+                    Id = c.Id,
+                    OwnerName = c.Owner.UserName,
+                    Name = c.Name,
+                    Level = c.Level
+                })
+                .ToListAsync();
+            return characters;
+        }
 
         public async Task<CharacterDetail> GetCharacterById(int Id)
         {
@@ -138,6 +152,14 @@ namespace CharacterBuilder.Services.Character
         {
             var character = await _dbContext.Characters.FindAsync(characterId);
             if (character is null || character.CampaignId != null)
+                return false;
+            var campaign = await _dbContext.CampaignPlayers
+                .Include(cp => cp.Campaign)
+                .FirstOrDefaultAsync(cp => cp.CampaignId == campaignId && (cp.PlayerId==character.OwnerId || cp.Campaign.GameMasterId == character.OwnerId));
+            var campaignAsGM = await _dbContext.Campaigns
+                .FirstOrDefaultAsync(c => c.GameMasterId == character.OwnerId);
+            
+            if (campaign is null && campaignAsGM is null)
                 return false;
             
             character.CampaignId = campaignId;
