@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using CharacterBuilder.MVC.Data;
 using CharacterBuilder.Services.Item;
 using CharacterBuilder.Services.Campaign;
 using CharacterBuilder.Services.CampaignPlayer;
 using CharacterBuilder.Services.Character;
 using CharacterBuilder.Services.Weapon;
 using CharacterBuilder.Services.InventorySlots;
+using CharacterBuilder.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

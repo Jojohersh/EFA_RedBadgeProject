@@ -1,0 +1,68 @@
+@model CharacterBuilder.Models.Campaign.CampaignDetail
+
+@{
+    ViewData["Title"] = $"{@Model.Name} - Campaign Details";
+}
+
+<div class="container-fluid">
+    <h1>@Model.Name</h1>
+    <p class="col-8 pb-5">@Model.Description</p>
+    <div class="container">
+        <h2>Players</h2>
+        @if (Model.Players.Count == 0)
+        {
+            <p>This adventure could use some adventurers. Add players by username with the button below.</p>
+        }
+        else {
+        <table class="table">
+            <tbody>
+                    @foreach(var player in Model.Players)
+                    {
+                        <tr>
+                            <td>@player.UserName</td>
+                            <td>
+                                @Model.Characters.Where(c => c.OwnerName == player.UserName).FirstOrDefault()?.Name
+                            </td>
+                            <td>
+                                @Html.ActionLink("Leave campaign", "RemovePlayer", new {id=Model.Id, username=player.UserName})
+                            </td>
+                        </tr>
+                    }
+            </tbody>
+        </table>
+        }
+    @Html.ActionLink("Add a Player", "AddPlayer", new {id=@Model.Id}, new {Class="btn btn-primary"})
+    </div>
+    <div class="container pb-5">
+        <h2>Characters</h2>
+        @if (Model.Characters.Count == 0)
+        {
+            <p>Your story needs characters. Add a character with the button below</p>
+        }
+        else
+        {
+            <table class="table table-striped">
+                <thead>
+                    <th>Owner Name</th>
+                    <th>Character Name</th>
+                    <th>Character Level</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    @foreach(var character in Model.Characters)
+                    {
+                        <tr>
+                            <td>@character.OwnerName</td>
+                            <td>@character.Name</td>
+                            <td>@character.Level</td>
+                            <td>@Html.ActionLink("Remove","RemoveCharacter", new {id=@character.Id, campaignId=@Model.Id}, new {Class="btn btn-danger-sm"})</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        @Html.ActionLink("Add a character", "AddCharacter",new {id=@Model.Id}, new {Class="btn btn-primary"})
+    </div>
+    @Html.ActionLink("Edit Campaign", "Update", new {id=@Model.Id}, new {Class="btn btn-primary"})
+    @Html.ActionLink("Delete Campaign","ConfirmDelete", new {id=@Model.Id},new {Class="btn btn-danger"})
+</div>

@@ -1,0 +1,38 @@
+@model List<CharacterBuilder.Models.Item.ItemListItem>
+
+@{
+    ViewData["Title"] = "View all items";
+}
+
+<div class="container-fluid">
+    <table class="table">
+        <thead>
+            <th>Item Name</th>
+            <th>Description</th>
+            <th></th>
+        </thead>
+        <tbody>
+            @{
+                var sortedItems = Model.OrderBy(item => item.Name).ToList();
+            }
+            @foreach(var item in sortedItems)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Update" asp-controller="Item" asp-route-id="@item.Id">Edit</a>
+                        <a class="btn btn-danger" asp-action="ConfirmDelete" asp-controller="Item" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        @if(Model.Count == 0)
+        {
+            <p>
+                No items found. Create a new item down below.
+            </p>
+        }
+    </table>
+    <a class="btn btn-primary" asp-action="Create" asp-controller="Item">Create new Item</a>
+</div>

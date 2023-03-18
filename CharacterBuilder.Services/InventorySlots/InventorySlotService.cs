@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using CharacterBuilder.Data.Entities;
 using CharacterBuilder.Models.CharacterInventorySlot;
-using CharacterBuilder.MVC.Data;
+using CharacterBuilder.Data;
 using CharacterBuilder.Services.Item;
 using CharacterBuilder.Services.Weapon;
 using Microsoft.EntityFrameworkCore;
+using CharacterBuilder.Models.Item;
 
 namespace CharacterBuilder.Services.InventorySlots
 {
@@ -37,6 +38,7 @@ namespace CharacterBuilder.Services.InventorySlots
                 var newInventoryItem = new CharacterInventorySlotEntity {
                     Character = characterSearched,
                     Item = itemSearched,
+                    Weapon = null,
                     ItemCount = model.ItemCount
                 };
                 _dbContext.InventorySlots.Add(newInventoryItem);
@@ -53,54 +55,56 @@ namespace CharacterBuilder.Services.InventorySlots
                 var newInventoryItem = new CharacterInventorySlotEntity {
                     Character = characterSearched,
                     Weapon = weaponSearched,
-                    ItemCount = 1
+                    Item = null,
+                    ItemCount = model.ItemCount
                 };
                 _dbContext.InventorySlots.Add(newInventoryItem);
                 return await _dbContext.SaveChangesAsync() > 0;
             }
         }
 
-        public async Task<List<InventorySlotListItem>> GetAllItemSlotsAsync(int characterId)
+        public async Task<List<ItemSlotListItem>> GetAllItemSlotsAsync(int characterId)
         {
             return await _dbContext.InventorySlots
                 .Include(slot => slot.Character)
                 .Include(slot => slot.Item)
                 .Where(slot => slot.Character.Id == characterId && slot.Weapon == null)
-                .Select(slot => new InventorySlotListItem {
-                    IsWeapon = false,
-                    ItemName = slot.Item.Name,
-                    ItemDescription = slot.Item.Description,
+                .Select(slot => new ItemSlotListItem {
+                    SlotId = slot.Id,
+                    Name = slot.Item.Name,
+                    Description = slot.Item.Description,
                     ItemCount = slot.ItemCount
                 })
                 .ToListAsync();
         }
 
-        public async Task<List<InventorySlotListItem>> GetAllWeaponSlotsAsync(int characterId)
+        public async Task<List<WeaponSlotListItem>> GetAllWeaponSlotsAsync(int characterId)
         {
             return await _dbContext.InventorySlots
                 .Include(slot => slot.Character)
                 .Include(slot => slot.Weapon)
                 .Where(slot => slot.Character.Id == characterId && slot.Item == null)
-                .Select(slot => new InventorySlotListItem {
-                    IsWeapon = true,
-                    ItemName = slot.Weapon.Name,
+                .Select(slot => new WeaponSlotListItem {
+                    SlotId = slot.Id,
+                    Name = slot.Weapon.Name,
                     ItemCount = slot.ItemCount,
-                    WeaponLowRange = slot.Weapon.LowAttackRange,
-                    WeaponHighRange = slot.Weapon.HighAttackRange,
-                    WeaponLowThrownRange = slot.Weapon.LowThrownRange,
-                    WeaponHighThrownRange = slot.Weapon.HighThrownRange,
-                    WeaponAttackStat = slot.Weapon.AttackingStat,
-                    WeaponTargetStat = slot.Weapon.TargetStat
+                    LowAttackRange = slot.Weapon.LowAttackRange,
+                    HighAttackRange = slot.Weapon.HighAttackRange,
+                    LowThrownRange = slot.Weapon.LowThrownRange,
+                    HighThrownRange = slot.Weapon.HighThrownRange,
+                    AttackingStat = slot.Weapon.AttackingStat,
+                    TargetStat = slot.Weapon.TargetStat,
+                    IsTwoHanded = slot.Weapon.IsTwoHanded
                 })
                 .ToListAsync();
         }
 
         public async Task<bool> UpdateInventorySlotAsync(InventorySlotEdit model)
         {
-            var slotToUpdate = await _dbContext.InventorySlots.FindAsync(model.Id);
+            var slotToUpdate = await _dbContext.InventorySlots.FindAsync(model.SlotId);
             if (slotToUpdate is null || model.ItemCount < 0)
                 return false;
-            
+                
             slotToUpdate.ItemCount = model.ItemCount;
             return await _dbContext.SaveChangesAsync() > 0;
         }

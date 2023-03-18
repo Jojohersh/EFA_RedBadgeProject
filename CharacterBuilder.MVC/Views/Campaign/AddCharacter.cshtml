@@ -1,0 +1,26 @@
+@model List<CharacterBuilder.Models.Character.CharacterListItem>
+
+@inject ICampaignService _campaignService;
+
+@{
+    int campaignId = 0;
+    var validCampaign = int.TryParse(ViewData["CampaignId"].ToString(), out campaignId);
+    var campaign = await _campaignService.GetCampaignByIdAsync(campaignId); 
+}
+
+<div class="container-fluid">
+    <h1>Add character to campaign</h1>
+    <form asp-action="AddCharacter" asp-route-campaignId="@campaignId">
+        <div class="form-group col-md-6">
+            <select class="form-select" name="characterId">
+                @foreach(var character in Model)
+                {
+                    <option value=@character.Id>
+                        @character.Name
+                    </option>
+                }
+            </select>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Add character to campaign">
+    </form>
+</div>

@@ -1,0 +1,20 @@
+@model CharacterBuilder.Models.Campaign.CampaignEdit
+
+@{
+    ViewData["Title"] = "Edit campaign";
+}
+
+<div class="container-fluid">
+    <form asp-action="Update" asp-route-id="@Model.Id">
+        @Html.Hidden("Id", @Model.Id)
+        <div class="form-group">
+            @Html.DisplayNameFor(c => c.Name)
+            @Html.TextBoxFor(c => c.Name, new {Class="form-control"})
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(c => c.Description);
+            @Html.TextAreaFor(c => c.Description, new {Class="form-control", Rows=6})
+        </div>
+        <input class="btn btn-primary" type="submit" value="Update Campaign">
+    </form>
+</div>

@@ -10,6 +10,7 @@ namespace CharacterBuilder.Services.Character
     {
         Task<bool> CreateCharacterAsync(CharacterCreate model, int ownerId);
         Task<List<CharacterListItem>> GetAllCharactersByOwnerId(int Id);
+        Task<List<CharacterListItem>> GetAllUnusedCharactersByOwnerId(int Id);
         Task<CharacterDetail> GetCharacterById(int Id);
         Task<bool> UpdateCharacterAsync(CharacterEdit model);
         Task<bool> AddCharacterToCampaignAsync(int characterId, int campaignId);

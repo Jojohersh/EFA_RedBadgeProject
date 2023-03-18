@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CharacterBuilder.Data.Entities;
 using CharacterBuilder.Models.CampaignPlayer;
-using CharacterBuilder.MVC.Data;
+using CharacterBuilder.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

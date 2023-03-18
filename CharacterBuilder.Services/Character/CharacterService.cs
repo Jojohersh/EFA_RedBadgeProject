@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CharacterBuilder.Data;
 using CharacterBuilder.Data.Entities;
 using CharacterBuilder.Models.Character;
-using CharacterBuilder.MVC.Data;
+using CharacterBuilder.Services.InventorySlots;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,11 +15,13 @@ namespace CharacterBuilder.Services.Character
     {
         private readonly UserManager<IdentityUser<int>> _userManager;
         private readonly ApplicationDbContext _dbContext;
+        private readonly IInventorySlotsService _inventoryService;
 
-        public CharacterService(UserManager<IdentityUser<int>> userManager, ApplicationDbContext dbContext)
+        public CharacterService(UserManager<IdentityUser<int>> userManager, IInventorySlotsService inventoryService, ApplicationDbContext dbContext)
         {
             _userManager = userManager;
             _dbContext = dbContext;
+            _inventoryService = inventoryService;
         }
 
         public async Task<bool> CreateCharacterAsync(CharacterCreate model, int ownerId)
@@ -37,7 +40,7 @@ namespace CharacterBuilder.Services.Character
                 ResilienceScore = model.ResilienceScore,
                 SoulScore = model.SoulScore,
                 MovementScore = model.MovementScore,
-                WeaponProficiencies = model.WeaponProficiencies
+                WeaponProficiencies = (model.WeaponProficiencies == null) ? "" : model.WeaponProficiencies
             };
             _dbContext.Characters.Add(newCharacter);
             return await _dbContext.SaveChangesAsync() > 0;
@@ -57,6 +60,20 @@ namespace CharacterBuilder.Services.Character
                 .ToListAsync();
             return characters;
         }
+        public async Task<List<CharacterListItem>> GetAllUnusedCharactersByOwnerId(int Id)
+        {
+            var characters = await _dbContext.Characters
+                .Include(c => c.Owner)
+                .Where(c => c.OwnerId == Id && c.CampaignId == null)
+                .Select(c => new CharacterListItem {
+                    Id = c.Id,
+                    OwnerName = c.Owner.UserName,
+                    Name = c.Name,
+                    Level = c.Level
+                })
+                .ToListAsync();
+            return characters;
+        }
 
         public async Task<CharacterDetail> GetCharacterById(int Id)
         {
@@ -66,6 +83,7 @@ namespace CharacterBuilder.Services.Character
                 .Where(c => c.Id == Id)
                 .Select(c => new CharacterDetail {
                     Id = c.Id,
+                    OwnerId = c.OwnerId,
                     OwnerName = (c.Owner != null)? c.Owner.UserName : "No current owner",
                     CampaignId = c.CampaignId,
                     CampaignName = (c.Campaign != null)? c.Campaign.Name : "Not in a campaign",
@@ -81,12 +99,14 @@ namespace CharacterBuilder.Services.Character
                     MovementScore = c.MovementScore,
                     CurrentHp = c.CurrentHp,
                     CurrentTalentPoints = c.CurrentTalentPoints,
-                    WeaponProficiencies = c.WeaponProficiencies,
-                    //todo: Items = _inventoryService.GetItemsByCharacterId(Id),
-                    //todo: Weapons = _inventoryService.GetWeaponsByCharacterId(Id)
+                    WeaponProficiencies = c.WeaponProficiencies
                 })
-                .SingleAsync();
-                return character;
+                .FirstOrDefaultAsync();
+            if (character is null)
+                return null;
+            character.Items = await _inventoryService.GetAllItemSlotsAsync(Id);
+            character.Weapons = await _inventoryService.GetAllWeaponSlotsAsync(Id);
+            return character;
         }
         public async Task<bool> UpdateCharacterAsync(CharacterEdit model)
         {
@@ -132,6 +152,14 @@ namespace CharacterBuilder.Services.Character
         {
             var character = await _dbContext.Characters.FindAsync(characterId);
             if (character is null || character.CampaignId != null)
+                return false;
+            var campaign = await _dbContext.CampaignPlayers
+                .Include(cp => cp.Campaign)
+                .FirstOrDefaultAsync(cp => cp.CampaignId == campaignId && (cp.PlayerId==character.OwnerId || cp.Campaign.GameMasterId == character.OwnerId));
+            var campaignAsGM = await _dbContext.Campaigns
+                .FirstOrDefaultAsync(c => c.GameMasterId == character.OwnerId);
+            
+            if (campaign is null && campaignAsGM is null)
                 return false;
             
             character.CampaignId = campaignId;

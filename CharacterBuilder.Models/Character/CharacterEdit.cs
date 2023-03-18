@@ -8,8 +8,8 @@ namespace CharacterBuilder.Models.Character
     public class CharacterEdit
     {
         public int Id {get; set;}
-        public int CampaignId {get; set;}
-        public int OwnerId {get; set;}
+        public int? CampaignId {get; set;}
+        public int? OwnerId {get; set;}
         public string Name {get; set;}
         public string? Height {get; set;}
         public string? Weight {get; set;}

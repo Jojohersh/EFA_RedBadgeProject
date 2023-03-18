@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace CharacterBuilder.MVC.Data;
+namespace CharacterBuilder.Data;
 
 public class ApplicationDbContext : IdentityDbContext<IdentityUser<int>,IdentityRole<int>,int>
 {

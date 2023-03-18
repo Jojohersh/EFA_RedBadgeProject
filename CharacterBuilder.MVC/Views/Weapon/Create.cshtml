@@ -1,0 +1,33 @@
+@model CharacterBuilder.Models.Weapon.WeaponCreate
+
+@{
+    ViewData["Title"] = "Create Weapon";
+}
+
+<div class="container-fluid">
+    <form asp-action="Create">
+        <div class="form-group">
+            @Html.DisplayNameFor(w => w.Name)
+            @Html.TextBoxFor(w => w.Name, new {Class="form-control"})
+            @Html.DisplayNameFor(w => w.IsTwoHanded)
+            @Html.CheckBoxFor(w => w.IsTwoHanded, new {Class="form-check-input"})
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(w => w.LowAttackRange)
+            @Html.TextBoxFor(w => w.LowAttackRange , new {Class="form-control"})
+            @Html.DisplayNameFor(w => w.HighAttackRange)
+            @Html.TextBoxFor(w => w.HighAttackRange , new {Class="form-control"})
+            @Html.DisplayNameFor(w => w.LowThrownRange)
+            @Html.TextBoxFor(w => w.LowThrownRange , new {Class="form-control"})
+            @Html.DisplayNameFor(w => w.HighThrownRange)
+            @Html.TextBoxFor(w => w.HighThrownRange , new {Class="form-control"})
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(w => w.AttackingStat)
+            @Html.TextBoxFor(w => w.AttackingStat , new {Class="form-control"})
+            @Html.DisplayNameFor(w => w.TargetStat)
+            @Html.TextBoxFor(w => w.TargetStat , new {Class="form-control"})
+        </div>
+        <input class="btn btn-primary" type="submit" value="Create Weapon">
+    </form>
+</div>

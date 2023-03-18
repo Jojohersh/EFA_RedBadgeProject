@@ -1,0 +1,63 @@
+@model CharacterBuilder.Models.Character.CharacterCreate
+
+@{
+    ViewData["Title"] = "Create a Character";
+}
+
+<div class="container">
+    <form asp-action="Create">
+        <div class="form-group">
+            @Html.DisplayNameFor(c => c.Name)
+            @Html.TextBoxFor(c => c.Name, new {Class="form-control"})
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(c => c.Height)
+            @Html.TextBoxFor(c => c.Height, new {Class="form-control"})
+            <span asp-validation-for="Height"></span>
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(c => c.Weight)
+            @Html.TextBoxFor(c => c.Weight, new {Class="form-control"})
+            <span asp-validation-for="Weight"></span>
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(c => c.Age)
+            @Html.TextBoxFor(c => c.Age, new {Class="form-control"})
+            <span asp-validation-for="Age"></span>
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(c=>c.MindScore)
+            @Html.TextBoxFor(c=>c.MindScore, new {Class="form-control"})
+            <span asp-validation-for="MindScore"></span>
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(c => c.BodyScore)
+            @Html.TextBoxFor(c => c.BodyScore, new {Class="form-control"})
+            <span asp-validation-for="BodyScore"></span>
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(c => c.ResilienceScore)
+            @Html.TextBoxFor(c => c.ResilienceScore, new {Class="form-control"})
+            <span asp-validation-for="ResilienceScore"></span>
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(c => c.SoulScore)
+            @Html.TextBoxFor(c => c.SoulScore, new {Class="form-control"})
+            <span asp-validation-for="SoulScore"></span>
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(c => c.MovementScore)
+            @Html.TextBoxFor(c => c.MovementScore, new {Class="form-control"})
+            <span asp-validation-for="MovementScore"></span>
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(c => c.WeaponProficiencies)
+            @Html.TextAreaFor(c => c.WeaponProficiencies, new {Class="form-control"})
+            <span asp-validation-for="WeaponProficiencies"></span>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Create Character">
+        </div>
+    </form>
+</div>

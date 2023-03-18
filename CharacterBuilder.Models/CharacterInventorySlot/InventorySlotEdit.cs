@@ -9,7 +9,9 @@ namespace CharacterBuilder.Models.CharacterInventorySlot
     public class InventorySlotEdit
     {
         [Required]
-        public int Id {get; set;}
+        public int SlotId {get; set;}
+        [Required]
+        public int CharacterId {get; set;}
         [Required]
         public int ItemCount {get; set;}
     }

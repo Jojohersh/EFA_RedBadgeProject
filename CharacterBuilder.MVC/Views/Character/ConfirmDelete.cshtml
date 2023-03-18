@@ -1,0 +1,14 @@
+@model CharacterBuilder.Models.Character.CharacterDetail
+
+@{
+    ViewData["Title"] = $"Details - {@Model.Name}";
+}
+
+<div class="container col-8">
+    <div class="alert alert-danger" role="alert">
+        Are you sure you wish to delete <strong>@Model.Name</strong>?
+        This cannot be undone.
+    </div>
+    @Html.ActionLink("Delete","Delete",new {id = Model.Id}, new {Class="btn btn-danger"})
+    @Html.ActionLink("Get me out of here!", "Detail", new {id = @Model.Id}, new {Class="btn btn-primary"})
+</div>

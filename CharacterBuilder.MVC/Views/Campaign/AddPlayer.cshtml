@@ -1,0 +1,16 @@
+@model CharacterBuilder.Models.CampaignPlayer.CampaignPlayerCreate
+@{
+    ViewData["Title"] = "Add a player to your campaign";
+}
+
+<div class="container-fluid">
+    <h1>Add player to campaign</h1>
+    <form asp-action="AddPlayer">
+        @Html.Hidden("campaignId",@Model.CampaignId)
+        <div class="form-group col-6">
+            <label for="username">Player Name</label>
+            <input class="form-control" name="username" placeholder="user name to add">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Add Player">
+    </form>
+</div>

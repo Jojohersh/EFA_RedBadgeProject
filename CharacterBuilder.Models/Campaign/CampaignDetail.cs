@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CharacterBuilder.Models.CampaignPlayer;
 using CharacterBuilder.Models.Character;
 
 namespace CharacterBuilder.Models.Campaign
@@ -12,7 +13,7 @@ namespace CharacterBuilder.Models.Campaign
         public string GameMasterName {get; set;}
         public string Name {get; set;}
         public string? Description {get; set;}
-        public List<string?> Players {get; set;}
+        public List<CampaignPlayerListItem> Players {get; set;}
         public List<CharacterListItem> Characters {get; set;}
         public DateTimeOffset CreatedUTC {get; set;}
     }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CharacterBuilder.Models.Item;
-using CharacterBuilder.MVC.Data;
+using CharacterBuilder.Data;
 using Microsoft.AspNetCore.Identity;
 using CharacterBuilder.Data.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -54,15 +54,20 @@ namespace CharacterBuilder.Services.Item
         public async Task<List<ItemListItem>> GetAllItemsAsync()
         {
             return await _dbContext.Items
+                        .Include(item => item.CreatedBy)
                         .Select(item => new ItemListItem {
                             Id = item.Id,
-                            Name = item.Name
+                            Name = item.Name,
+                            Description = item.Description,
+                            CreatorId = item.CreatedBy.Id
                         }).ToListAsync();
         }
 
         public async Task<ItemDetail> GetItemByIdAsync(int id)
         {
-            var foundItem = await _dbContext.Items.Include(i => i.CreatedBy).FirstOrDefaultAsync(i => i.Id == id);
+            var foundItem = await _dbContext.Items
+                        .Include(i => i.CreatedBy)
+                        .FirstOrDefaultAsync(i => i.Id == id);
             if (foundItem is null)
                 return null;
             
@@ -70,7 +75,8 @@ namespace CharacterBuilder.Services.Item
                 Id = foundItem.Id,
                 Name = foundItem.Name,
                 Description = foundItem.Description,
-                CreatedBy = foundItem?.CreatedBy?.UserName
+                CreatorId = foundItem.CreatedBy.Id,
+                CreatedBy = foundItem.CreatedBy?.UserName
             };
         }
 
@@ -79,8 +85,12 @@ namespace CharacterBuilder.Services.Item
             if (model is null)
                 return false;
 
-            var foundItem = await _dbContext.Items.FindAsync(model.Id);
+            var foundItem = await _dbContext.Items
+                        .Include(item => item.CreatedBy)
+                        .FirstOrDefaultAsync(item => item.Id == model.Id);
             if (foundItem is null)
+                return false;
+            if (foundItem.CreatedBy.Id != model.CreatorId)
                 return false;
             
             foundItem.Name = model.Name;
